@@ -1,0 +1,10 @@
+# İşletim Sistemi
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# Editörler
+.vscode/
+.idea/
+*.swp
+*~

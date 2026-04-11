@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="KMZ Trade - Ihr zuverlässiger Partner für hochwertige Mineralien und Lebensmittelprodukte. Seit über 20 Jahren verbinden wir Qualität mit internationaler Erfahrung.">
+  <meta name="keywords"
+    content="KMZ Trade, Mineralien, Zirkon, Ilmenit, Kolumbit, Sonnenblumenöl, Palmöl, Zucker, Rohstoffe, Import Export">
+  <title>KMZ Trade - Qualität verbindet Märkte weltweit</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="KMZ Trade - Premium Mineralien & Lebensmittel">
+  <meta property="og:description"
+    content="Ihr zuverlässiger Partner für hochwertige Mineralien und Premium-Lebensmittelprodukte.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kmztrade.com">
+  <meta property="og:image" content="images/og-image.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-logo">
+      <img src="images/logo-icon.svg" alt="KMZ Trade">
+    </div>
+    <span class="preloader-text">KMZ TRADE</span>
+    <div class="preloader-bar">
+      <div class="preloader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Header -->
+
+  <header class="header" id="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">KMZ</div>
+        <span class="logo-text">TRADE</span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Startseite</a></li>
+          <li><a href="about.html" class="nav-link" data-i18n="nav.about">Über Uns</a></li>
+          <li><a href="products.html" class="nav-link" data-i18n="nav.products">Produkte</a></li>
+          <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+        </ul>
+
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-current" id="langBtn">
+            <span class="lang-flag">🇩🇪</span>
+            <span class="lang-code">DE</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="langDropdown">
+            <button class="lang-option active" data-lang="de">
+              <span class="lang-flag">🇩🇪</span>
+              <span>Deutsch</span>
+            </button>
+            <button class="lang-option" data-lang="en">
+              <span class="lang-flag">🇬🇧</span>
+              <span>English</span>
+            </button>
+            <button class="lang-option" data-lang="tr">
+              <span class="lang-flag">🇹🇷</span>
+              <span>Türkçe</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary" data-i18n="nav.cta">Anfrage senden</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü öffnen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div id="particles-js"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-badge" data-i18n="hero.badge">🏆 Seit über 20 Jahren Ihr Partner</span>
+      <h1 class="hero-title">
+        <span class="text-gradient" data-i18n="hero.title1">Qualität verbindet</span><br>
+        <span data-i18n="hero.title2">Märkte weltweit</span>
+      </h1>
+      <p class="hero-subtitle" data-i18n="hero.desc">
+        Hochwertige Speiseöle, Zucker und seltene Rohstoffe.
+        Verlässlichkeit, Nachhaltigkeit und internationale Erfahrung
+        machen uns zu Ihrem starken Handelspartner.
+      </p>
+      <div class="hero-buttons">
+        <a href="products.html" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polygon points="10,8 16,12 10,16" fill="currentColor" />
+          </svg>
+          <span data-i18n="hero.cta1">Produkte entdecken</span>
+        </a>
+        <a href="contact.html" class="btn btn-secondary" data-i18n="hero.cta2">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section" style="background: var(--secondary-bg);">
+    <div class="container">
+      <div class="stats fade-in">
+        <div class="stat-item">
+          <div class="stat-number">20+</div>
+          <div class="stat-label" data-i18n="stats.years">Jahre Erfahrung</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label" data-i18n="stats.partners">Internationale Partner</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">9</div>
+          <div class="stat-label" data-i18n="stats.products">Premium Produkte</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label" data-i18n="stats.support">Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge" data-i18n="categories.badge">Unsere Kategorien</span>
+        <h2 class="section-title" data-i18n="categories.title">Premium Produkte für Ihren Bedarf</h2>
+        <p class="section-desc" data-i18n="categories.desc">
+          Von hochwertigen Lebensmitteln bis zu seltenen Industriemineralien –
+          wir liefern Qualität in jeder Kategorie.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Minerals Category -->
+        <div class="card fade-in">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?w=600&h=400&fit=crop"
+              alt="Industriemineralien">
+            <span class="product-category">Mineralien</span>
+          </div>
+          <h3 class="product-title" data-i18n="categories.minerals">Industriemineralien</h3>
+          <p class="product-desc" data-i18n="categories.minerals.desc">
+            Hochwertige Mineralien aus Afrika: Zirkon, Ilmenit, Kolumbit,
+            Mangan, Blei und Zink für Ihre industriellen Anforderungen.
+          </p>
+          <a href="products.html#minerals" class="btn btn-secondary" style="width: 100%;"
+            data-i18n="categories.minerals.btn">
+            Mineralien ansehen →
+          </a>
+        </div>
+
+        <!-- Food Category -->
+        <div class="card fade-in">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&h=400&fit=crop"
+              alt="Lebensmittelprodukte">
+            <span class="product-category">Lebensmittel</span>
+          </div>
+          <h3 class="product-title" data-i18n="categories.food">Lebensmittelprodukte</h3>
+          <p class="product-desc" data-i18n="categories.food.desc">
+            Premium Speiseöle und Zucker für die Lebensmittelindustrie:
+            Sonnenblumenöl, Palmöl und hochwertiger Zucker.
+          </p>
+          <a href="products.html#food" class="btn btn-secondary" style="width: 100%;" data-i18n="categories.food.btn">
+            Lebensmittel ansehen →
+          </a>
+        </div>
+
+        <!-- Quick Quote -->
+        <div class="card card-glass fade-in"
+          style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">📞</div>
+          <h3 class="product-title">Schnelle Anfrage?</h3>
+          <p class="product-desc">
+            Kontaktieren Sie uns direkt über WhatsApp für eine schnelle Antwort.
+          </p>
+          <a href="https://wa.me/491784003264" target="_blank" class="btn btn-primary"
+            style="width: 100%; background: #25D366;">
+            WhatsApp öffnen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section" style="background: var(--secondary-bg);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge" data-i18n="featured.badge">Bestseller</span>
+        <h2 class="section-title" data-i18n="featured.title">Unsere Top-Produkte</h2>
+      </div>
+
+      <div class="products-grid">
+        <div class="card product-card fade-in">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1605627079912-97c3810a11a4?w=600&h=400&fit=crop"
+              alt="Zirkonsand">
+          </div>
+          <h4 class="product-title">Zirkonsand</h4>
+          <p class="product-desc">ZrHfO2 50-65%</p>
+          <div class="product-capacity">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20" />
+            </svg>
+            Bis zu 2.000 t/Monat
+          </div>
+          <a href="products.html#zirkonsand" class="btn btn-primary" style="width: 100%;">Anfrage senden</a>
+        </div>
+
+        <div class="card product-card fade-in">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&h=400&fit=crop"
+              alt="Sonnenblumenöl">
+          </div>
+          <h4 class="product-title">Sonnenblumenöl</h4>
+          <p class="product-desc">Premium Qualität</p>
+          <div class="product-capacity">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20" />
+            </svg>
+            Flexible Mengen
+          </div>
+          <a href="products.html#sonnenblumenoel" class="btn btn-primary" style="width: 100%;">Anfrage senden</a>
+        </div>
+
+        <div class="card product-card fade-in">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&h=400&fit=crop" alt="Zucker">
+          </div>
+          <h4 class="product-title">Zucker</h4>
+          <p class="product-desc">ICUMSA 45</p>
+          <div class="product-capacity">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20" />
+            </svg>
+            Großhandelsmengen
+          </div>
+          <a href="products.html#zucker" class="btn btn-primary" style="width: 100%;">Anfrage senden</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge" data-i18n="testimonials.badge">Kundenstimmen</span>
+        <h2 class="section-title" data-i18n="testimonials.title">Was unsere Partner sagen</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <p class="testimonial-content" data-i18n="testimonials.1">
+            Seit 5 Jahren arbeiten wir mit KMZ Trade zusammen. Die Qualität der Mineralien ist konstant hoch
+            und die Lieferungen sind immer pünktlich. Ein absolut verlässlicher Partner!
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MK</div>
+            <div class="testimonial-info">
+              <h5 data-i18n="testimonials.1.author">Michael Krause</h5>
+              <span data-i18n="testimonials.1.role">CEO, Metallwerk GmbH</span>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <p class="testimonial-content" data-i18n="testimonials.2">
+            Die Zusammenarbeit mit KMZ Trade hat unsere Lieferkette optimiert.
+            Professionelle Beratung und erstklassige Produkte zu fairen Preisen.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SB</div>
+            <div class="testimonial-info">
+              <h5 data-i18n="testimonials.2.author">Stefan Bauer</h5>
+              <span data-i18n="testimonials.2.role">Einkaufsleiter, Food Corp AG</span>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <p class="testimonial-content" data-i18n="testimonials.3">
+            Besonders beeindruckt hat uns die schnelle Reaktionszeit und
+            der hervorragende Kundenservice. Absolute Empfehlung!
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">LW</div>
+            <div class="testimonial-info">
+              <h5 data-i18n="testimonials.3.author">Lisa Weber</h5>
+              <span data-i18n="testimonials.3.role">Geschäftsführerin, Import Direkt</span>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="section section-dark partners-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge" data-i18n="partners.badge">Unsere Partner</span>
+        <h2 class="section-title" data-i18n="partners.title">Vertrauensvolle Zusammenarbeit</h2>
+      </div>
+
+      <div class="partners-track">
+        <div class="partner-logo"><span>Metallwerk GmbH</span></div>
+        <div class="partner-logo"><span>Food Corp AG</span></div>
+        <div class="partner-logo"><span>Import Direkt</span></div>
+        <div class="partner-logo"><span>Global Minerals</span></div>
+        <div class="partner-logo"><span>EuroTrade Ltd</span></div>
+        <div class="partner-logo"><span>Africa Mining Co</span></div>
+        <div class="partner-logo"><span>Metallwerk GmbH</span></div>
+        <div class="partner-logo"><span>Food Corp AG</span></div>
+        <div class="partner-logo"><span>Import Direkt</span></div>
+        <div class="partner-logo"><span>Global Minerals</span></div>
+        <div class="partner-logo"><span>EuroTrade Ltd</span></div>
+        <div class="partner-logo"><span>Africa Mining Co</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge" data-i18n="faq.badge">FAQ</span>
+        <h2 class="section-title" data-i18n="faq.title">Häufig gestellte Fragen</h2>
+      </div>
+
+      <div class="faq-list fade-in">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq.q1">Was sind die Mindestbestellmengen?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content" data-i18n="faq.a1">
+              Unsere Mindestbestellmengen variieren je nach Produkt. Für Mineralien beginnt die Mindestbestellmenge bei
+              20 Tonnen, für Lebensmittelprodukte bei 1 Container (ca. 20-25 Tonnen). Kontaktieren Sie uns für
+              individuelle Anfragen.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq.q2">Wie sind die Lieferzeiten?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content" data-i18n="faq.a2">
+              Die Lieferzeiten hängen vom Produkt und Zielort ab. Für europäische Destinationen rechnen Sie mit 2-4
+              Wochen,
+              für internationale Lieferungen 4-8 Wochen. Wir bieten auch Express-Lieferoptionen an.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq.q3">Welche Qualitätszertifikate bieten Sie?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content" data-i18n="faq.a3">
+              Alle unsere Produkte werden mit detaillierten Analysezertifikaten geliefert. Wir arbeiten mit
+              unabhängigen Prüflaboren zusammen und garantieren die angegebenen Spezifikationen.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq.q4">Bieten Sie auch Musterlieferungen an?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content" data-i18n="faq.a4">
+              Ja, wir bieten Musterlieferungen für alle unsere Produkte an. Die Muster werden gegen eine geringe
+              Gebühr versendet, die bei einer späteren Bestellung angerechnet wird.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container">
+      <div class="card card-glass fade-in" style="text-align: center; padding: var(--space-lg);">
+        <h2 style="margin-bottom: var(--space-sm);" data-i18n="cta.title">Bereit für eine Partnerschaft?</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto var(--space-md);" data-i18n="cta.desc">
+          Lassen Sie uns gemeinsam Ihr Geschäft voranbringen.
+          Kontaktieren Sie uns für ein unverbindliches Angebot.
+        </p>
+        <div style="display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary" data-i18n="cta.btn">Kontakt aufnehmen</a>
+          <a href="tel:+491784003264" class="btn btn-secondary">+49 178 4003264</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">KMZ</div>
+            <span class="logo-text">TRADE</span>
+          </a>
+          <p data-i18n="footer.desc">
+            Ihr zuverlässiger Partner für hochwertige Mineralien und Lebensmittelprodukte.
+            Qualität, Verlässlichkeit und internationale Erfahrung seit über 20 Jahren.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title" data-i18n="footer.nav">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav.home">Startseite</a></li>
+            <li><a href="about.html" data-i18n="nav.about">Über Uns</a></li>
+            <li><a href="products.html" data-i18n="nav.products">Produkte</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title" data-i18n="footer.products">Produkte</h4>
+          <ul class="footer-links">
+            <li><a href="products.html#minerals" data-i18n="footer.minerals">Mineralien</a></li>
+            <li><a href="products.html#food" data-i18n="footer.food">Lebensmittel</a></li>
+            <li><a href="products.html#zirkonsand" data-i18n="footer.zircon">Zirkonsand</a></li>
+            <li><a href="products.html#sonnenblumenoel" data-i18n="footer.sunflower">Sonnenblumenöl</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title" data-i18n="footer.legal">Rechtliches</h4>
+          <ul class="footer-links">
+            <li><a href="impressum.html" data-i18n="footer.imprint">Impressum</a></li>
+            <li><a href="impressum.html#agb" data-i18n="footer.terms">AGB</a></li>
+            <li><a href="impressum.html#datenschutz" data-i18n="footer.privacy">Datenschutz</a></li>
+            <li><a href="impressum.html#cookies" data-i18n="footer.cookies">Cookie-Richtlinie</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.rights">© 2024 KMZ Trade. Alle Rechte vorbehalten.</p>
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/491784003264" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Nach oben">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <h4 data-i18n="cookie.title">🍪 Cookie-Hinweis</h4>
+        <p><span data-i18n="cookie.text">Wir verwenden Cookies, um Ihre Erfahrung zu verbessern.</span> <a
+            href="impressum.html#cookies" data-i18n="cookie.more">Mehr erfahren</a>
+        </p>
+      </div>
+      <div class="cookie-buttons">
+        <button class="cookie-btn cookie-btn-decline" id="cookieDecline" data-i18n="cookie.decline">Ablehnen</button>
+        <button class="cookie-btn cookie-btn-accept" id="cookieAccept" data-i18n="cookie.accept">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
