@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initBackToTop();
   initCookieBanner();
   initLanguageSwitcher();
+  initCatalogDownloader();
 });
 
 // ============================================
@@ -40,53 +41,56 @@ function initPreloader() {
 // PARTICLES BACKGROUND
 // ============================================
 function initParticles() {
-  if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 60, density: { enable: true, value_area: 1000 } },
-        color: { value: ['#d4a855', '#f0d078', '#bc8c3d'] },
-        shape: { type: 'circle' },
-        opacity: {
-          value: 0.4,
-          random: true,
-          anim: { enable: true, speed: 0.8, opacity_min: 0.1, sync: false }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: { enable: true, speed: 2, size_min: 0.5, sync: false }
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: '#d4a855',
-          opacity: 0.15,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1.2,
-          direction: 'none',
-          random: true,
-          straight: false,
-          out_mode: 'out',
-          bounce: false
-        }
+  const config = {
+    particles: {
+      number: { value: 60, density: { enable: true, value_area: 1000 } },
+      color: { value: ['#d4a855', '#f0d078', '#bc8c3d'] },
+      shape: { type: 'circle' },
+      opacity: {
+        value: 0.4,
+        random: true,
+        anim: { enable: true, speed: 0.8, opacity_min: 0.1, sync: false }
       },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: { enable: true, mode: 'grab' },
-          onclick: { enable: true, mode: 'push' },
-          resize: true
-        },
-        modes: {
-          grab: { distance: 180, line_linked: { opacity: 0.4 } },
-          push: { particles_nb: 3 }
-        }
+      size: {
+        value: 3,
+        random: true,
+        anim: { enable: true, speed: 2, size_min: 0.5, sync: false }
       },
-      retina_detect: true
-    });
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: '#d4a855',
+        opacity: 0.15,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 1.2,
+        direction: 'none',
+        random: true,
+        straight: false,
+        out_mode: 'out',
+        bounce: false
+      }
+    },
+    interactivity: {
+      detect_on: 'canvas',
+      events: {
+        onhover: { enable: true, mode: 'grab' },
+        onclick: { enable: true, mode: 'push' },
+        resize: true
+      },
+      modes: {
+        grab: { distance: 180, line_linked: { opacity: 0.4 } },
+        push: { particles_nb: 3 }
+      }
+    },
+    retina_detect: true
+  };
+
+  if (typeof particlesJS !== 'undefined') {
+    if (document.getElementById('particles-js')) particlesJS('particles-js', config);
+    if (document.getElementById('particles-bg')) particlesJS('particles-bg', config);
   }
 }
 
@@ -477,3 +481,38 @@ function applyTranslations(lang) {
   // Update HTML lang attribute
   document.documentElement.lang = lang === 'de' ? 'de' : (lang === 'en' ? 'en' : 'tr');
 }
+
+// ============================================
+// CATALOG PDF DOWNLOADER (Simulated)
+// ============================================
+function initCatalogDownloader() {
+  const btn = document.getElementById('downloadPdfBtn');
+  if (!btn) return;
+
+  btn.addEventListener('click', function () {
+    // Don't prevent default — let the browser download natively via the download attribute
+    const originalContent = btn.innerHTML;
+    btn.style.width = btn.offsetWidth + 'px';
+    btn.innerHTML = '<span style="display:inline-block; animation: rotate 1s linear infinite; margin-right: 8px;">⏳</span> Wird heruntergeladen...';
+
+    setTimeout(() => {
+      btn.innerHTML = '✅ Erfolgreich!';
+      btn.style.background = 'var(--accent-gold)';
+      btn.style.color = 'var(--primary-bg)';
+      
+      setTimeout(() => {
+        btn.innerHTML = originalContent;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.width = '';
+      }, 2500);
+    }, 1500);
+  });
+}
+
+// Helper animation for spinner
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+`;
+document.head.appendChild(style);

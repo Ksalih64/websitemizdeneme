@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="KMZ Trade Mineralienkatalog - Detaillierte technische Spezifikationen für Zirkon, Ilmenit, Kolumbit und weitere Industriemineralien.">
+    <title>Katalog - KMZ Trade</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+</head>
+
+<body>
+    <!-- Global Particles Background -->
+    <div id="particles-bg" class="particles-global"></div>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">KMZ</div>
+                <span class="logo-text">TRADE</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav.home">Startseite</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav.about">Über Uns</a></li>
+                    <li><a href="products.html" class="nav-link" data-i18n="nav.products">Produkte</a></li>
+                    <li><a href="catalog.html" class="nav-link active" data-i18n="nav.catalog">Katalog</a></li>
+                    <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+                </ul>
+
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="lang-current" id="langBtn">
+                        <span class="lang-flag">🇩🇪</span>
+                        <span class="lang-code">DE</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option active" data-lang="de">
+                            <span class="lang-flag">🇩🇪</span>
+                            <span>Deutsch</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span>English</span>
+                        </button>
+                        <button class="lang-option" data-lang="tr">
+                            <span class="lang-flag">🇹🇷</span>
+                            <span>Türkçe</span>
+                        </button>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="btn btn-primary" data-i18n="nav.cta">Anfrage senden</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü öffnen">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="section" style="padding-top: 140px; background: linear-gradient(180deg, var(--secondary-bg) 0%, var(--primary-bg) 100%);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge" data-i18n="catalog.hero.badge">Technischer Katalog</span>
+                <h1 class="section-title" data-i18n="catalog.hero.title">Produktspezifikationen</h1>
+                <p class="section-desc" data-i18n="catalog.hero.desc">
+                    Detaillierte chemische Analysen ve technische Daten unserer Kernprodukte für Ihre industrielle Planung.
+                </p>
+            </div>
+
+            <!-- PDF Banner -->
+            <div class="pdf-banner fade-in">
+                <div class="pdf-banner-text">
+                    <h3 data-i18n="catalog.pdf.title">Vollständiger Katalog 2024</h3>
+                    <p data-i18n="catalog.pdf.desc">Laden Sie unser komplettes Portfolio als technische PDF-Broschüre herunter.</p>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="images/kmz-catalog-mockup.jpg" class="btn btn-secondary" id="downloadPdfBtn" download="KMZ_Trade_Technical_Catalog.jpg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        PDF Katalog (2.4 MB)
+                    </a>
+                    <a href="contact.html?type=sample" class="btn-sample" style="margin-top: 0; width: auto; padding: 0.8rem 1.5rem;" data-i18n="product.sample">Muster Anfordern</a>
+                </div>
+            </div>
+
+            <!-- Catalog Preview -->
+            <div class="section-header fade-in" style="margin-top: var(--space-xl);">
+                <span class="section-badge">Vorschau</span>
+                <h2 class="section-title">Design-Konzept</h2>
+            </div>
+            <div class="fade-in" style="max-width: 900px; margin: 0 auto; background: var(--glass-bg); padding: var(--space-md); border-radius: var(--radius-lg); border: 1px solid var(--glass-border);">
+                <img src="images/kmz-catalog-mockup.jpg" alt="KMZ Trade Catalog Design" style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-card);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="section">
+        <div class="container">
+            <div class="catalog-grid">
+                <!-- Zircon Sand -->
+                <div class="catalog-card fade-in">
+                    <div class="catalog-card-header">
+                        <div class="catalog-card-icon">💎</div>
+                        <div>
+                            <h3 data-i18n="product.zircon">Zirkonsand</h3>
+                            <span class="catalog-formula">ZrSiO₄</span>
+                        </div>
+                    </div>
+                    <div class="catalog-card-body">
+                        <table class="catalog-spec-table">
+                            <tr><td>Zr(Hf)O₂</td><td>65.0% Min</td></tr>
+                            <tr><td>Fe₂O₃</td><td>0.05% Max</td></tr>
+                            <tr><td>TiO₂</td><td>0.12% Max</td></tr>
+                            <tr><td>Al₂O₃</td><td>0.50% Max</td></tr>
+                            <tr><td>Feuchtigkeit</td><td>0.5% Max</td></tr>
+                        </table>
+                        <div class="catalog-applications">
+                            <span class="catalog-app-tag">Keramik</span>
+                            <span class="catalog-app-tag">Gießerei</span>
+                            <span class="catalog-app-tag">Refraktär</span>
+                        </div>
+                    </div>
+                    <div class="catalog-card-footer">
+                        <a href="contact.html?product=zircon" class="btn btn-primary" data-i18n="product.inquiry">Anfrage</a>
+                    </div>
+                </div>
+
+                <!-- Ilmenite -->
+                <div class="catalog-card fade-in">
+                    <div class="catalog-card-header">
+                        <div class="catalog-card-icon">🪨</div>
+                        <div>
+                            <h3 data-i18n="product.ilmenite">Ilmenit</h3>
+                            <span class="catalog-formula">FeTiO₃</span>
+                        </div>
+                    </div>
+                    <div class="catalog-card-body">
+                        <table class="catalog-spec-table">
+                            <tr><td>TiO₂</td><td>50.0% - 54.0%</td></tr>
+                            <tr><td>FeO</td><td>25.0% - 28.0%</td></tr>
+                            <tr><td>Fe₂O₃</td><td>12.0% - 15.0%</td></tr>
+                            <tr><td>SiO₂</td><td>0.8% Max</td></tr>
+                            <tr><td>Cr₂O₃</td><td>0.05% Max</td></tr>
+                        </table>
+                        <div class="catalog-applications">
+                            <span class="catalog-app-tag">Pigmente</span>
+                            <span class="catalog-app-tag">Titanium</span>
+                            <span class="catalog-app-tag">Schweißen</span>
+                        </div>
+                    </div>
+                    <div class="catalog-card-footer">
+                        <a href="contact.html?product=ilmenite" class="btn btn-primary" data-i18n="product.inquiry">Anfrage</a>
+                    </div>
+                </div>
+
+                <!-- Columbite -->
+                <div class="catalog-card fade-in">
+                    <div class="catalog-card-header">
+                        <div class="catalog-card-icon">🔋</div>
+                        <div>
+                            <h3 data-i18n="product.columbite">Kolumbit</h3>
+                            <span class="catalog-formula">(Fe,Mn)Nb₂O₆</span>
+                        </div>
+                    </div>
+                    <div class="catalog-card-body">
+                        <table class="catalog-spec-table">
+                            <tr><td>Nb₂O₅</td><td>65% - 75%</td></tr>
+                            <tr><td>Ta₂O₅</td><td>1% - 5%</td></tr>
+                            <tr><td>TiO₂</td><td>2.0% Max</td></tr>
+                            <tr><td>SnO₂</td><td>0.5% Max</td></tr>
+                            <tr><td>ThO₂ + U₃O₈</td><td>0.1% Max</td></tr>
+                        </table>
+                        <div class="catalog-applications">
+                            <span class="catalog-app-tag">Elektronik</span>
+                            <span class="catalog-app-tag">Superlegierung</span>
+                            <span class="catalog-app-tag">Edelstahl</span>
+                        </div>
+                    </div>
+                    <div class="catalog-card-footer">
+                        <a href="contact.html?product=columbite" class="btn btn-primary" data-i18n="product.inquiry">Anfrage</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">KMZ</div>
+                        <span class="logo-text">TRADE</span>
+                    </a>
+                    <p data-i18n="footer.desc">Ihr zuverlässiger Partner für hochwertige Mineralien und Lebensmittelprodukte.</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title" data-i18n="footer.nav">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="nav.home">Startseite</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">Über Uns</a></li>
+                        <li><a href="products.html" data-i18n="nav.products">Produkte</a></li>
+                        <li><a href="catalog.html" data-i18n="nav.catalog">Katalog</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2024 KMZ Trade. Alle Rechte vorbehalten.</p>
+    </footer>
+    
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/491784003264" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
