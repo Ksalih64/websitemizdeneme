@@ -2496,43 +2496,6 @@ h4 {
   padding: 0.875rem 1.25rem;
 }
 
-.field-proof-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-md);
-}
-
-.field-proof-card {
-  background: var(--card-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.field-proof-card video {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  background: #070b0f;
-  border-bottom: 1px solid var(--glass-border);
-  display: block;
-}
-
-.field-proof-copy {
-  padding: var(--space-md);
-}
-
-.field-proof-copy h3 {
-  font-size: 1.2rem;
-  margin: 0.65rem 0 0.45rem;
-}
-
-.field-proof-copy p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
 .catalog-card {
   background: var(--card-bg);
   border: 1px solid var(--glass-border);
@@ -2950,10 +2913,6 @@ h4 {
     align-items: stretch;
     flex-direction: column;
     width: 100%;
-  }
-
-  .field-proof-grid {
-    grid-template-columns: 1fr;
   }
 
   .pdf-banner {
