@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="KMZ Trade Nachweise - Feldvideos, öffentliche PDF-Kataloge, Analyseübersichten und Dokumentenanfrage für Mineralien und Lebensmittelprodukte.">
+    <title>Nachweise - KMZ Trade</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+</head>
+
+<body>
+    <div id="particles-bg" class="particles-global"></div>
+
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">KMZ</div>
+                <span class="logo-text">TRADE</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav.home">Startseite</a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav.about">Über Uns</a></li>
+                    <li><a href="products.html" class="nav-link" data-i18n="nav.products">Produkte</a></li>
+                    <li><a href="catalog.html" class="nav-link" data-i18n="nav.catalog">Katalog</a></li>
+                    <li><a href="evidence.html" class="nav-link active" data-i18n="nav.evidence">Nachweise</a></li>
+                    <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+                </ul>
+
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="lang-current" id="langBtn">
+                        <span class="lang-flag">🇩🇪</span>
+                        <span class="lang-code">DE</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option active" data-lang="de"><span class="lang-flag">🇩🇪</span><span>Deutsch</span></button>
+                        <button class="lang-option" data-lang="en"><span class="lang-flag">🇬🇧</span><span>English</span></button>
+                        <button class="lang-option" data-lang="tr"><span class="lang-flag">🇹🇷</span><span>Türkçe</span></button>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="btn btn-primary" data-i18n="nav.cta">Anfrage senden</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü öffnen">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="evidence-hero">
+            <div class="container evidence-hero-grid">
+                <div class="evidence-hero-copy fade-in">
+                    <span class="section-badge" data-i18n="evidence.hero.badge">Buyer Proof Room</span>
+                    <h1 data-i18n="evidence.hero.title">Videos, catalogs and document requests in one place</h1>
+                    <p data-i18n="evidence.hero.desc">
+                        Review public-safe field footage, download buyer catalogs and request missing product evidence directly by WhatsApp or email.
+                    </p>
+                    <div class="evidence-actions">
+                        <a href="#videos" class="btn btn-primary" data-i18n="evidence.hero.cta1">Watch field proof</a>
+                        <a href="#documents" class="btn btn-secondary" data-i18n="evidence.hero.cta2">Download documents</a>
+                    </div>
+                </div>
+                <div class="evidence-featured-video fade-in">
+                    <video controls muted playsinline preload="metadata" poster="assets/media/field-loading-proof.jpg">
+                        <source src="assets/media/field-loading-proof.mp4" type="video/mp4">
+                    </video>
+                    <div class="evidence-video-caption">
+                        <span class="route-code">FIELD</span>
+                        <strong data-i18n="evidence.hero.video">New field footage added</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="videos">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-badge" data-i18n="evidence.videos.badge">Field Videos</span>
+                    <h2 class="section-title" data-i18n="evidence.videos.title">Visible proof before the RFQ</h2>
+                    <p class="section-desc" data-i18n="evidence.videos.desc">
+                        Public clips are muted and compressed for web use. Exact locations and sensitive operating details are shared only with qualified buyers.
+                    </p>
+                </div>
+
+                <div class="evidence-video-grid fade-in">
+                    <article class="evidence-video-card">
+                        <video controls muted playsinline preload="metadata" poster="assets/media/field-loading-proof.jpg">
+                            <source src="assets/media/field-loading-proof.mp4" type="video/mp4">
+                        </video>
+                        <h3 data-i18n="evidence.video.loading.title">Loading and field handling</h3>
+                        <p data-i18n="evidence.video.loading.desc">Fresh footage for buyer confidence during early-stage review.</p>
+                    </article>
+                    <article class="evidence-video-card">
+                        <video controls muted playsinline preload="metadata" poster="assets/media/field-material-proof.jpg">
+                            <source src="assets/media/field-material-proof.mp4" type="video/mp4">
+                        </video>
+                        <h3 data-i18n="evidence.video.material.title">Material movement</h3>
+                        <p data-i18n="evidence.video.material.desc">Additional public-safe material footage for sourcing validation.</p>
+                    </article>
+                    <article class="evidence-video-card">
+                        <video controls muted playsinline preload="metadata" poster="assets/media/field-site-view.jpg">
+                            <source src="assets/media/field-site-view.mp4" type="video/mp4">
+                        </video>
+                        <h3 data-i18n="evidence.video.site.title">Field site view</h3>
+                        <p data-i18n="evidence.video.site.desc">Site-level visual proof without publishing exact location details.</p>
+                    </article>
+                    <article class="evidence-video-card">
+                        <video controls muted playsinline preload="metadata" poster="assets/media/field-processing-line.jpg">
+                            <source src="assets/media/field-processing-line.mp4" type="video/mp4">
+                        </video>
+                        <h3 data-i18n="evidence.video.line.title">Processing line</h3>
+                        <p data-i18n="evidence.video.line.desc">Operational handling footage for buyer due diligence.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-muted" id="documents">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-badge" data-i18n="evidence.docs.badge">Documents</span>
+                    <h2 class="section-title" data-i18n="evidence.docs.title">Catalogs and proof requests</h2>
+                    <p class="section-desc" data-i18n="evidence.docs.desc">
+                        Download the public catalogs or request the exact document pack for a selected product.
+                    </p>
+                </div>
+
+                <div class="evidence-doc-grid fade-in">
+                    <article class="evidence-doc-card evidence-doc-featured">
+                        <span class="route-code">PDF</span>
+                        <h3 data-i18n="evidence.doc.full.title">Full buyer catalog</h3>
+                        <p data-i18n="evidence.doc.full.desc">Minerals, edible oils and sugar in one professional catalog.</p>
+                        <a href="assets/catalogs/kmz-trade-full-catalog.pdf" class="btn btn-primary" download data-i18n="evidence.doc.download">Download PDF</a>
+                    </article>
+                    <article class="evidence-doc-card">
+                        <span class="route-code">MIN</span>
+                        <h3 data-i18n="evidence.doc.minerals.title">Minerals catalog</h3>
+                        <p data-i18n="evidence.doc.minerals.desc">Manganese, lead, zinc, zirconium sand, monazite, columbite and ilmenite.</p>
+                        <a href="assets/catalogs/kmz-trade-minerals-catalog.pdf" class="btn btn-secondary" download data-i18n="evidence.doc.download">Download PDF</a>
+                    </article>
+                    <article class="evidence-doc-card">
+                        <span class="route-code">FOOD</span>
+                        <h3 data-i18n="evidence.doc.food.title">Food catalog</h3>
+                        <p data-i18n="evidence.doc.food.desc">Sunflower oil, palm oil and sugar product overview.</p>
+                        <a href="assets/catalogs/kmz-trade-food-catalog.pdf" class="btn btn-secondary" download data-i18n="evidence.doc.download">Download PDF</a>
+                    </article>
+                </div>
+
+                <div class="evidence-request-panel fade-in">
+                    <div>
+                        <span class="section-badge" data-i18n="evidence.request.badge">Missing proof?</span>
+                        <h3 data-i18n="evidence.request.title">Request product-specific COA, assay or origin file</h3>
+                        <p data-i18n="evidence.request.desc">
+                            For products such as monazite or columbite where public files are limited, buyers can request the document pack directly.
+                        </p>
+                    </div>
+                    <div class="evidence-request-actions">
+                        <a class="btn btn-primary"
+                            href="https://wa.me/491784003264?text=Hello%20KMZ%20Trade%2C%20I%20would%20like%20to%20request%20product%20proof%20documents%20%28COA%2C%20assay%2C%20origin%29."
+                            target="_blank" data-i18n="evidence.request.whatsapp">Request on WhatsApp</a>
+                        <a class="btn btn-secondary"
+                            href="mailto:info@kmztrade.com?subject=Product%20proof%20document%20request&body=Hello%20KMZ%20Trade%2C%0A%0AI%20would%20like%20to%20request%20product%20proof%20documents%20for%3A%0AProduct%3A%0AQuantity%3A%0ADestination%20port%3A%0ARequired%20documents%3A%20COA%20%2F%20assay%20%2F%20origin%20file%0A%0ARegards%2C"
+                            data-i18n="evidence.request.email">Request by email</a>
+                    </div>
+                </div>
+
+                <div class="evidence-product-proof-grid fade-in">
+                    <article><strong>Manganese</strong><span>Public assay values available</span></article>
+                    <article><strong>Lead ore</strong><span>Public assay values available</span></article>
+                    <article><strong>Zinc ore</strong><span>Public assay values available</span></article>
+                    <article><strong>Zirconium sand</strong><span>Public assay values available</span></article>
+                    <article><strong>Monazite</strong><span>Document request required</span></article>
+                    <article><strong>Columbite</strong><span>Document request required</span></article>
+                    <article><strong>Ilmenite</strong><span>Document request required</span></article>
+                    <article><strong>Food products</strong><span>Specification by buyer request</span></article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">KMZ</div>
+                        <span class="logo-text">TRADE</span>
+                    </a>
+                    <p data-i18n="footer.desc">Ihr zuverlässiger Partner für hochwertige Mineralien und Lebensmittelprodukte.</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title" data-i18n="footer.nav">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="nav.home">Startseite</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">Über Uns</a></li>
+                        <li><a href="products.html" data-i18n="nav.products">Produkte</a></li>
+                        <li><a href="catalog.html" data-i18n="nav.catalog">Katalog</a></li>
+                        <li><a href="evidence.html" data-i18n="nav.evidence">Nachweise</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2024 KMZ Trade. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/491784003264" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

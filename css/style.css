@@ -2673,6 +2673,170 @@ h4 {
   font-size: 0.9rem;
 }
 
+/* ---------- Evidence / Proof Room ---------- */
+.proof-teaser,
+.evidence-hero {
+  padding: 120px 0 80px;
+}
+
+.proof-teaser-grid,
+.evidence-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1fr);
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.proof-teaser-copy h2,
+.evidence-hero-copy h1 {
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  margin: var(--space-sm) 0;
+}
+
+.proof-teaser-copy p,
+.evidence-hero-copy p {
+  color: var(--text-secondary);
+  max-width: 660px;
+  margin-bottom: var(--space-md);
+}
+
+.proof-teaser-media,
+.evidence-featured-video,
+.evidence-video-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.proof-teaser-media video,
+.evidence-featured-video video,
+.evidence-video-card video {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #070b0f;
+  display: block;
+}
+
+.evidence-actions,
+.evidence-request-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.evidence-video-caption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+}
+
+.evidence-video-grid,
+.evidence-doc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.evidence-video-card h3,
+.evidence-video-card p,
+.evidence-doc-card h3,
+.evidence-doc-card p {
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+.evidence-video-card h3 {
+  font-size: 1.05rem;
+  margin-top: var(--space-md);
+}
+
+.evidence-video-card p,
+.evidence-doc-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding-bottom: var(--space-md);
+}
+
+.evidence-doc-grid {
+  grid-template-columns: 1.2fr 1fr 1fr;
+}
+
+.evidence-doc-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.evidence-doc-card h3,
+.evidence-doc-card p {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.evidence-doc-card .btn {
+  margin-top: auto;
+}
+
+.evidence-doc-featured {
+  border-color: var(--border-glow);
+  background:
+    linear-gradient(135deg, rgba(212, 168, 85, 0.13), rgba(122, 162, 184, 0.07)),
+    var(--card-bg);
+}
+
+.evidence-request-panel {
+  margin-top: var(--space-lg);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-md);
+  align-items: center;
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.evidence-request-panel h3 {
+  font-size: 1.35rem;
+  margin: var(--space-xs) 0;
+}
+
+.evidence-request-panel p {
+  color: var(--text-secondary);
+  max-width: 760px;
+}
+
+.evidence-product-proof-grid {
+  margin-top: var(--space-md);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-sm);
+}
+
+.evidence-product-proof-grid article {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.evidence-product-proof-grid strong,
+.evidence-product-proof-grid span {
+  display: block;
+}
+
+.evidence-product-proof-grid span {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
 /* ---------- Responsive for new sections ---------- */
 @media (max-width: 1024px) {
   .why-us-grid {
@@ -2681,6 +2845,17 @@ h4 {
 
   .globe-grid {
     grid-template-columns: 1fr;
+  }
+
+  .proof-teaser-grid,
+  .evidence-hero-grid,
+  .evidence-request-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .evidence-video-grid,
+  .evidence-product-proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .globe-visual {
@@ -2725,6 +2900,12 @@ h4 {
   }
 
   .catalog-download-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .evidence-doc-grid,
+  .evidence-video-grid,
+  .evidence-product-proof-grid {
     grid-template-columns: 1fr;
   }
 
