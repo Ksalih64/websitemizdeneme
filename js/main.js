@@ -311,6 +311,27 @@ function initFormEnhancements() {
     });
 
     form.addEventListener('submit', function (e) {
+      if (form.id === 'contactForm') {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const productSelect = form.querySelector('#product');
+        const productLabel = productSelect?.selectedOptions?.[0]?.textContent?.trim() || '';
+        const subject = `KMZ Trade RFQ - ${productLabel || 'Product Inquiry'}`;
+        const body = [
+          `Name: ${formData.get('name') || ''}`,
+          `Email: ${formData.get('email') || ''}`,
+          `Phone: ${formData.get('phone') || ''}`,
+          `Company: ${formData.get('company') || ''}`,
+          `Product: ${productLabel || formData.get('product') || ''}`,
+          '',
+          'Message:',
+          formData.get('message') || ''
+        ].join('\n');
+
+        window.location.href = `mailto:info@kmztrade.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        return;
+      }
+
       const submitBtn = form.querySelector('[type="submit"]');
       if (submitBtn) {
         submitBtn.textContent = 'Wird gesendet...';
@@ -483,7 +504,7 @@ function applyTranslations(lang) {
 }
 
 // ============================================
-// CATALOG PDF DOWNLOADER (Simulated)
+// CATALOG PDF DOWNLOADER
 // ============================================
 function initCatalogDownloader() {
   const btn = document.getElementById('downloadPdfBtn');
@@ -493,10 +514,10 @@ function initCatalogDownloader() {
     // Don't prevent default — let the browser download natively via the download attribute
     const originalContent = btn.innerHTML;
     btn.style.width = btn.offsetWidth + 'px';
-    btn.innerHTML = '<span style="display:inline-block; animation: rotate 1s linear infinite; margin-right: 8px;">⏳</span> Wird heruntergeladen...';
+    btn.innerHTML = '<span style="display:inline-block; animation: rotate 1s linear infinite; margin-right: 8px;">...</span> Wird heruntergeladen...';
 
     setTimeout(() => {
-      btn.innerHTML = '✅ Erfolgreich!';
+      btn.innerHTML = 'Download bereit';
       btn.style.background = 'var(--accent-gold)';
       btn.style.color = 'var(--primary-bg)';
       

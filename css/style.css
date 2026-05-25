@@ -5,22 +5,24 @@
 
 /* ---------- CSS Variables ---------- */
 :root {
-  /* Colors - Premium Dark Palette */
-  --primary-bg: #080d18;
-  --secondary-bg: #0d1525;
-  --tertiary-bg: #131d30;
-  --card-bg: rgba(13, 21, 37, 0.7);
+  /* Colors - Corporate Mineral Trade Palette */
+  --primary-bg: #0a0f13;
+  --secondary-bg: #10171d;
+  --tertiary-bg: #18232b;
+  --card-bg: rgba(16, 23, 29, 0.78);
 
   /* Gold Gradient */
   --accent-gold: #d4a855;
   --accent-gold-light: #f0d078;
   --accent-gold-dark: #a17c30;
-  --accent-bronze: #bc8c3d;
+  --accent-bronze: #b46f45;
+  --accent-steel: #7aa2b8;
+  --accent-green: #6f9f7b;
 
   /* Text Colors */
   --text-primary: #ffffff;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-secondary: #b4c0cb;
+  --text-muted: #7f8c98;
 
   /* Effects */
   --border-color: rgba(212, 168, 85, 0.15);
@@ -100,8 +102,8 @@ body::before {
   bottom: 0;
   background:
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 168, 85, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(212, 168, 85, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 0% 80%, rgba(212, 168, 85, 0.05) 0%, transparent 50%);
+    radial-gradient(ellipse 55% 35% at 100% 45%, rgba(122, 162, 184, 0.08) 0%, transparent 48%),
+    radial-gradient(ellipse 55% 35% at 0% 85%, rgba(111, 159, 123, 0.07) 0%, transparent 48%);
   pointer-events: none;
   z-index: -1;
 }
@@ -140,7 +142,7 @@ h6 {
   font-family: var(--font-display);
   font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 h1 {
@@ -2053,7 +2055,10 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--accent-gold-light);
   transition: all var(--transition-normal);
 }
 
@@ -2121,7 +2126,9 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   margin-bottom: var(--space-md);
   transition: all var(--transition-normal);
   position: relative;
@@ -2421,6 +2428,8 @@ h4 {
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-bg);
   flex-shrink: 0;
 }
 
@@ -2439,6 +2448,13 @@ h4 {
 
 .catalog-card-body {
   padding: var(--space-lg);
+}
+
+.catalog-card-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .catalog-spec-table {
@@ -2606,14 +2622,59 @@ h4 {
   }
 }
 
-/* Trade Status Dashboard */
-.trade-dashboard {
+.delivery-board {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   margin-top: var(--space-xl);
   backdrop-filter: blur(10px);
+}
+
+.delivery-matrix,
+.document-grid,
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-md);
+}
+
+.document-card,
+.sector-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.document-card h4,
+.sector-card h3 {
+  font-size: 1rem;
+  margin: var(--space-xs) 0;
+}
+
+.document-card p,
+.sector-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.sector-card span,
+.route-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 32px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  color: var(--accent-gold-light);
+  background: rgba(212, 168, 85, 0.08);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 .dashboard-header {
@@ -2717,22 +2778,25 @@ h4 {
   align-items: center;
   flex-wrap: wrap;
   gap: var(--space-xl);
-  opacity: 0.6;
-  filter: grayscale(1);
+  opacity: 0.85;
   transition: all 0.5s ease;
 }
 
 .partners-logo-grid:hover {
   opacity: 1;
-  filter: grayscale(0);
 }
 
 .partner-logo {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   color: var(--text-primary);
-  letter-spacing: -0.05em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.035);
 }
 
 .partner-logo span {
