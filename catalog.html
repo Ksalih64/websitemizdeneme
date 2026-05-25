@@ -82,18 +82,60 @@
             <!-- Catalog CTA -->
             <div class="pdf-banner fade-in">
                 <div class="pdf-banner-text">
-                    <h3 data-i18n="catalog.pdf.title">Technische Details anfordern</h3>
-                    <p data-i18n="catalog.pdf.desc">Für aktuelle Analysen, Mengen und Lieferbedingungen senden wir Ihnen produktspezifische Unterlagen.</p>
+                    <h3 data-i18n="catalog.pdf.title">PDF-Katalog herunterladen</h3>
+                    <p data-i18n="catalog.pdf.desc">Wählen Sie den vollständigen Katalog oder laden Sie gezielt Mineralien- bzw. Lebensmittelprodukte herunter.</p>
                 </div>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="contact.html?type=catalog" class="btn btn-secondary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                        </svg>
-                        Anfrage senden
-                    </a>
-                    <a href="contact.html?type=sample" class="btn-sample" style="margin-top: 0; width: auto; padding: 0.8rem 1.5rem;" data-i18n="product.sample">Muster Anfordern</a>
-                </div>
+                <a href="#catalogDownloads" class="btn btn-primary" data-i18n="catalog.pdf.cta">Katalog auswählen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF Downloads -->
+    <section class="section" id="catalogDownloads">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge" data-i18n="catalog.downloads.badge">PDF Downloads</span>
+                <h2 class="section-title" data-i18n="catalog.downloads.title">Katalog nach Bedarf auswählen</h2>
+                <p class="section-desc" data-i18n="catalog.downloads.desc">
+                    Käufer können den kompletten Produktkatalog herunterladen oder direkt den passenden Bereich wählen.
+                </p>
+            </div>
+
+            <div class="catalog-download-grid fade-in">
+                <article class="catalog-download-card catalog-download-card-featured">
+                    <span class="route-code">FULL</span>
+                    <h3 data-i18n="catalog.download.full.title">Gesamtkatalog</h3>
+                    <p data-i18n="catalog.download.full.desc">
+                        Mineralien, Speiseöle und Zucker in einem PDF. Geeignet für Erstkontakt und interne Einkaufsprüfung.
+                    </p>
+                    <a href="assets/catalogs/kmz-trade-full-catalog.pdf" class="btn btn-primary catalog-pdf-link" download data-catalog-type="full" data-i18n="catalog.download.full.cta">Gesamtkatalog herunterladen</a>
+                </article>
+
+                <article class="catalog-download-card">
+                    <span class="route-code">MIN</span>
+                    <h3 data-i18n="catalog.download.minerals.title">Maden / Mineralien</h3>
+                    <p data-i18n="catalog.download.minerals.desc">
+                        Zirkonsand, Ilmenit, Manganez, Kurşun, Çinko, Monazite, Columbite und Zirconium Sand.
+                    </p>
+                    <a href="assets/catalogs/kmz-trade-minerals-catalog.pdf" class="btn btn-secondary catalog-pdf-link" download data-catalog-type="minerals" data-i18n="catalog.download.minerals.cta">Mineralien-Katalog herunterladen</a>
+                </article>
+
+                <article class="catalog-download-card">
+                    <span class="route-code">FOOD</span>
+                    <h3 data-i18n="catalog.download.food.title">Gıda / Food</h3>
+                    <p data-i18n="catalog.download.food.desc">
+                        Sonnenblumenöl, Palmöl und Zucker für Lebensmittelindustrie, Großhandel und Export.
+                    </p>
+                    <a href="assets/catalogs/kmz-trade-food-catalog.pdf" class="btn btn-secondary catalog-pdf-link" download data-catalog-type="food" data-i18n="catalog.download.food.cta">Gıda-Katalog herunterladen</a>
+                </article>
+            </div>
+
+            <div class="catalog-upload-note fade-in">
+                <span class="route-code">PDF</span>
+                <p data-i18n="catalog.upload.note">
+                    PDF dosyaları hazır olduğunda `assets/catalogs` klasörüne aynı dosya adlarıyla yüklenir; butonlar otomatik çalışır.
+                </p>
+                <a href="contact.html?type=catalog" class="btn-sample" data-i18n="catalog.upload.cta">PDF yoksa katalog talep et</a>
             </div>
         </div>
     </section>

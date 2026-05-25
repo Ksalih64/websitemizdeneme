@@ -2379,6 +2379,63 @@ h4 {
   gap: var(--space-lg);
 }
 
+.catalog-download-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: var(--space-md);
+  align-items: stretch;
+}
+
+.catalog-download-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.catalog-download-card-featured {
+  background:
+    linear-gradient(135deg, rgba(212, 168, 85, 0.13), rgba(122, 162, 184, 0.07)),
+    var(--card-bg);
+  border-color: var(--border-glow);
+}
+
+.catalog-download-card h3 {
+  font-size: 1.35rem;
+}
+
+.catalog-download-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+}
+
+.catalog-download-card .btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+.catalog-upload-note {
+  margin-top: var(--space-md);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.catalog-upload-note p {
+  color: var(--text-secondary);
+  margin: 0;
+  flex: 1;
+}
+
 .catalog-card {
   background: var(--card-bg);
   border: 1px solid var(--glass-border);
@@ -2598,6 +2655,15 @@ h4 {
 
   .catalog-grid {
     grid-template-columns: 1fr;
+  }
+
+  .catalog-download-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-upload-note {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .pdf-banner {

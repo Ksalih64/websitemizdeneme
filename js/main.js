@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initCookieBanner();
   initLanguageSwitcher();
   initCatalogDownloader();
+  initCatalogPdfLinks();
 });
 
 // ============================================
@@ -316,13 +317,20 @@ function initFormEnhancements() {
         const formData = new FormData(form);
         const productSelect = form.querySelector('#product');
         const productLabel = productSelect?.selectedOptions?.[0]?.textContent?.trim() || '';
-        const subject = `KMZ Trade RFQ - ${productLabel || 'Product Inquiry'}`;
+        const urlParams = new URLSearchParams(window.location.search);
+        const catalogType = urlParams.get('catalog') || '';
+        const inquiryType = urlParams.get('type') || '';
+        const subject = catalogType
+          ? `KMZ Trade Catalog Request - ${catalogType}`
+          : `KMZ Trade RFQ - ${productLabel || 'Product Inquiry'}`;
         const body = [
           `Name: ${formData.get('name') || ''}`,
           `Email: ${formData.get('email') || ''}`,
           `Phone: ${formData.get('phone') || ''}`,
           `Company: ${formData.get('company') || ''}`,
           `Product: ${productLabel || formData.get('product') || ''}`,
+          `Inquiry Type: ${inquiryType || 'rfq'}`,
+          `Catalog Type: ${catalogType || ''}`,
           '',
           'Message:',
           formData.get('message') || ''
@@ -346,6 +354,16 @@ function initFormEnhancements() {
   if (product) {
     const productSelect = document.getElementById('product');
     if (productSelect) productSelect.value = product;
+  }
+
+  const catalogType = urlParams.get('catalog');
+  const inquiryType = urlParams.get('type');
+  if (inquiryType === 'catalog') {
+    const message = document.getElementById('message');
+    if (message && !message.value) {
+      const label = catalogType ? `${catalogType} catalog` : 'product catalog';
+      message.value = `Please send me the ${label}.`;
+    }
   }
 }
 
@@ -528,6 +546,29 @@ function initCatalogDownloader() {
         btn.style.width = '';
       }, 2500);
     }, 1500);
+  });
+}
+
+function initCatalogPdfLinks() {
+  const links = document.querySelectorAll('.catalog-pdf-link');
+  if (!links.length) return;
+
+  links.forEach(link => {
+    link.addEventListener('click', async function (event) {
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      try {
+        const response = await fetch(href, { method: 'HEAD' });
+        if (response.ok) return;
+      } catch (error) {
+        // Fall through to RFQ redirect when local/static hosting cannot verify the PDF.
+      }
+
+      event.preventDefault();
+      const catalogType = link.getAttribute('data-catalog-type') || 'catalog';
+      window.location.href = `contact.html?type=catalog&catalog=${encodeURIComponent(catalogType)}`;
+    });
   });
 }
 
