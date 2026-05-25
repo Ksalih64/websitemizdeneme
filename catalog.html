@@ -133,9 +133,46 @@
             <div class="catalog-upload-note fade-in">
                 <span class="route-code">PDF</span>
                 <p data-i18n="catalog.upload.note">
-                    PDF dosyaları hazır olduğunda `assets/catalogs` klasörüne aynı dosya adlarıyla yüklenir; butonlar otomatik çalışır.
+                    Public PDF catalogs are prepared with buyer-ready summaries. Sensitive report, sample and location details remain redacted.
                 </p>
-                <a href="contact.html?type=catalog" class="btn-sample" data-i18n="catalog.upload.cta">PDF yoksa katalog talep et</a>
+                <a href="contact.html?type=catalog" class="btn-sample" data-i18n="catalog.upload.cta">Full COA request</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Field Verification -->
+    <section class="section section-muted">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge" data-i18n="catalog.field.badge">Field Verification</span>
+                <h2 class="section-title" data-i18n="catalog.field.title">Source material with controlled proof</h2>
+                <p class="section-desc" data-i18n="catalog.field.desc">
+                    Short, muted field clips support buyer confidence while keeping sensitive site information out of the public catalog.
+                </p>
+            </div>
+
+            <div class="field-proof-grid fade-in">
+                <article class="field-proof-card">
+                    <video controls muted playsinline preload="metadata" poster="assets/media/field-site-view.jpg">
+                        <source src="assets/media/field-site-view.mp4" type="video/mp4">
+                    </video>
+                    <div class="field-proof-copy">
+                        <span class="route-code">SITE</span>
+                        <h3 data-i18n="catalog.field.site.title">Field site view</h3>
+                        <p data-i18n="catalog.field.site.desc">Public-safe site footage prepared for buyer review. Detailed location data is handled only during qualified due diligence.</p>
+                    </div>
+                </article>
+
+                <article class="field-proof-card">
+                    <video controls muted playsinline preload="metadata" poster="assets/media/field-processing-line.jpg">
+                        <source src="assets/media/field-processing-line.mp4" type="video/mp4">
+                    </video>
+                    <div class="field-proof-copy">
+                        <span class="route-code">LINE</span>
+                        <h3 data-i18n="catalog.field.line.title">Processing line footage</h3>
+                        <p data-i18n="catalog.field.line.desc">Operational footage gives buyers a concrete sense of material handling without exposing unnecessary operational details.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -403,6 +440,8 @@
             </div>
             <div class="footer-bottom">
                 <p data-i18n="footer.rights">© 2024 KMZ Trade. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
     </footer>
     
     <!-- WhatsApp Float -->
