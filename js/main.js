@@ -475,6 +475,8 @@ function initLanguageSwitcher() {
 
       // Apply translations
       applyTranslations(lang);
+      updateCatalogPdfLinks(lang);
+      applyCatalogSpecTranslations(lang);
 
       // Close dropdown
       switcher.classList.remove('active');
@@ -489,6 +491,9 @@ function initLanguageSwitcher() {
   if (currentLang !== 'de' && typeof translations !== 'undefined') {
     applyTranslations(currentLang);
   }
+
+  updateCatalogPdfLinks(currentLang);
+  applyCatalogSpecTranslations(currentLang);
 }
 
 // Apply translations to elements with data-i18n attribute
@@ -517,8 +522,271 @@ function applyTranslations(lang) {
     }
   });
 
+  document.querySelectorAll('[data-i18n-label]').forEach(el => {
+    const key = el.dataset.i18nLabel;
+    if (t[key]) {
+      el.label = t[key];
+    }
+  });
+
   // Update HTML lang attribute
   document.documentElement.lang = lang === 'de' ? 'de' : (lang === 'en' ? 'en' : 'tr');
+  applyCatalogSpecTranslations(lang);
+}
+
+const catalogPdfFiles = {
+  de: {
+    full: 'assets/catalogs/kmz-trade-full-catalog-de.pdf',
+    minerals: 'assets/catalogs/kmz-trade-minerals-catalog-de.pdf',
+    food: 'assets/catalogs/kmz-trade-food-catalog-de.pdf'
+  },
+  en: {
+    full: 'assets/catalogs/kmz-trade-full-catalog-en.pdf',
+    minerals: 'assets/catalogs/kmz-trade-minerals-catalog-en.pdf',
+    food: 'assets/catalogs/kmz-trade-food-catalog-en.pdf'
+  },
+  tr: {
+    full: 'assets/catalogs/kmz-trade-full-catalog-tr.pdf',
+    minerals: 'assets/catalogs/kmz-trade-minerals-catalog-tr.pdf',
+    food: 'assets/catalogs/kmz-trade-food-catalog-tr.pdf'
+  }
+};
+
+const catalogSpecTranslations = {
+  de: {
+    labels: {
+      main: 'Hauptbestandteil',
+      quality: 'Qualität',
+      form: 'Lieferform',
+      packaging: 'Verpackung',
+      docs: 'Dokumente'
+    },
+    analysis: 'Analysebericht verfügbar',
+    docs: 'Analysebericht, COA, Herkunft und Versandpapiere verfügbar',
+    products: {
+      zircon: {
+        main: 'Zirkonsand',
+        form: 'Mineralsand',
+        packaging: 'Bulk oder Big Bag',
+        apps: ['Keramik', 'Gießerei', 'Refraktär']
+      },
+      ilmenite: {
+        main: 'Ilmenit',
+        form: 'Erz / Konzentrat',
+        packaging: 'Bulk oder Big Bag',
+        apps: ['Pigmente', 'TiO2', 'Schweißen']
+      },
+      manganese: {
+        main: 'Manganerz',
+        form: 'Erz / Konzentrat',
+        packaging: 'Bulk oder Big Bag',
+        apps: ['Stahl', 'Legierungen', 'Batterie']
+      },
+      lead: {
+        main: 'Bleierz',
+        form: 'Erz / Konzentrat',
+        packaging: 'Bulk oder Big Bag',
+        apps: ['Batterien', 'Metallurgie', 'Industrie']
+      },
+      zinc: {
+        main: 'Zinkerz',
+        form: 'Erz / Konzentrat',
+        packaging: 'Bulk oder Big Bag',
+        apps: ['Galvanisierung', 'Legierungen', 'Metallhandel']
+      },
+      monazite: {
+        main: 'Monazit',
+        form: 'Mineralsand / Konzentrat',
+        packaging: 'Bulk oder Big Bag',
+        apps: ['Seltene Erden', 'Technologie', 'Industrie']
+      },
+      columbite: {
+        main: 'Columbit',
+        form: 'Erz / Konzentrat',
+        packaging: 'Bulk oder Big Bag',
+        apps: ['Elektronik', 'Superlegierung', 'Niob']
+      },
+      zirconium: {
+        main: 'Zirconium-Sand',
+        form: 'Mineralsand',
+        packaging: 'Bulk oder Big Bag',
+        apps: ['Keramik', 'Gießerei', 'Refraktär']
+      }
+    }
+  },
+  en: {
+    labels: {
+      main: 'Main component',
+      quality: 'Quality basis',
+      form: 'Delivery form',
+      packaging: 'Packaging',
+      docs: 'Documents'
+    },
+    analysis: 'Analysis report available',
+    docs: 'Analysis report, COA, origin and shipment papers available',
+    products: {
+      zircon: {
+        main: 'Zircon sand',
+        form: 'Mineral sand',
+        packaging: 'Bulk or Big Bag',
+        apps: ['Ceramics', 'Foundry', 'Refractory']
+      },
+      ilmenite: {
+        main: 'Ilmenite',
+        form: 'Ore / concentrate',
+        packaging: 'Bulk or Big Bag',
+        apps: ['Pigments', 'TiO2', 'Welding']
+      },
+      manganese: {
+        main: 'Manganese ore',
+        form: 'Ore / concentrate',
+        packaging: 'Bulk or Big Bag',
+        apps: ['Steel', 'Alloys', 'Battery']
+      },
+      lead: {
+        main: 'Lead ore',
+        form: 'Ore / concentrate',
+        packaging: 'Bulk or Big Bag',
+        apps: ['Batteries', 'Metallurgy', 'Industry']
+      },
+      zinc: {
+        main: 'Zinc ore',
+        form: 'Ore / concentrate',
+        packaging: 'Bulk or Big Bag',
+        apps: ['Galvanizing', 'Alloys', 'Metal trading']
+      },
+      monazite: {
+        main: 'Monazite',
+        form: 'Mineral sand / concentrate',
+        packaging: 'Bulk or Big Bag',
+        apps: ['Rare earths', 'Technology', 'Industry']
+      },
+      columbite: {
+        main: 'Columbite',
+        form: 'Ore / concentrate',
+        packaging: 'Bulk or Big Bag',
+        apps: ['Electronics', 'Superalloys', 'Niobium']
+      },
+      zirconium: {
+        main: 'Zirconium sand',
+        form: 'Mineral sand',
+        packaging: 'Bulk or Big Bag',
+        apps: ['Ceramics', 'Foundry', 'Refractory']
+      }
+    }
+  },
+  tr: {
+    labels: {
+      main: 'Ana bileşen',
+      quality: 'Kalite temeli',
+      form: 'Teslim formu',
+      packaging: 'Ambalaj',
+      docs: 'Belgeler'
+    },
+    analysis: 'Analiz raporu mevcut',
+    docs: 'Analiz raporu, COA, menşe ve sevkiyat evrakları mevcut',
+    products: {
+      zircon: {
+        main: 'Zirkon kumu',
+        form: 'Mineral kumu',
+        packaging: 'Bulk veya Big Bag',
+        apps: ['Seramik', 'Döküm', 'Refrakter']
+      },
+      ilmenite: {
+        main: 'İlmenit',
+        form: 'Cevher / konsantre',
+        packaging: 'Bulk veya Big Bag',
+        apps: ['Pigment', 'TiO2', 'Kaynak']
+      },
+      manganese: {
+        main: 'Manganez cevheri',
+        form: 'Cevher / konsantre',
+        packaging: 'Bulk veya Big Bag',
+        apps: ['Çelik', 'Alaşımlar', 'Batarya']
+      },
+      lead: {
+        main: 'Kurşun cevheri',
+        form: 'Cevher / konsantre',
+        packaging: 'Bulk veya Big Bag',
+        apps: ['Batarya', 'Metalurji', 'Sanayi']
+      },
+      zinc: {
+        main: 'Çinko cevheri',
+        form: 'Cevher / konsantre',
+        packaging: 'Bulk veya Big Bag',
+        apps: ['Galvaniz', 'Alaşımlar', 'Metal ticareti']
+      },
+      monazite: {
+        main: 'Monazite',
+        form: 'Mineral kumu / konsantre',
+        packaging: 'Bulk veya Big Bag',
+        apps: ['Nadir topraklar', 'Teknoloji', 'Sanayi']
+      },
+      columbite: {
+        main: 'Columbite',
+        form: 'Cevher / konsantre',
+        packaging: 'Bulk veya Big Bag',
+        apps: ['Elektronik', 'Süper alaşım', 'Niyobyum']
+      },
+      zirconium: {
+        main: 'Zirconium sand',
+        form: 'Mineral kumu',
+        packaging: 'Bulk veya Big Bag',
+        apps: ['Seramik', 'Döküm', 'Refrakter']
+      }
+    }
+  }
+};
+
+function getActiveLanguage() {
+  const lang = localStorage.getItem('kmzLang') || document.documentElement.lang || 'de';
+  return catalogPdfFiles[lang] ? lang : 'de';
+}
+
+function updateCatalogPdfLinks(lang = getActiveLanguage()) {
+  const language = catalogPdfFiles[lang] ? lang : 'de';
+
+  document.querySelectorAll('.catalog-pdf-link').forEach(link => {
+    const catalogType = link.getAttribute('data-catalog-type') || 'full';
+    const href = catalogPdfFiles[language][catalogType];
+    if (!href) return;
+
+    link.setAttribute('href', href);
+    link.setAttribute('download', href.split('/').pop());
+  });
+}
+
+function applyCatalogSpecTranslations(lang = getActiveLanguage()) {
+  const language = catalogSpecTranslations[lang] ? lang : 'de';
+  const spec = catalogSpecTranslations[language];
+
+  document.querySelectorAll('.catalog-card').forEach(card => {
+    const heading = card.querySelector('.catalog-card-header h3[data-i18n]');
+    const productKey = heading?.dataset.i18n?.replace('product.', '');
+    const product = spec.products[productKey];
+    if (!product) return;
+
+    const rows = card.querySelectorAll('.catalog-spec-table tr');
+    const rowData = [
+      [spec.labels.main, product.main],
+      [spec.labels.quality, spec.analysis],
+      [spec.labels.form, product.form],
+      [spec.labels.packaging, product.packaging],
+      [spec.labels.docs, spec.docs]
+    ];
+
+    rows.forEach((row, index) => {
+      const cells = row.querySelectorAll('td');
+      const data = rowData[index];
+      if (cells.length < 2 || !data) return;
+      cells[0].textContent = data[0];
+      cells[1].textContent = data[1];
+    });
+
+    card.querySelectorAll('.catalog-app-tag').forEach((tag, index) => {
+      if (product.apps[index]) tag.textContent = product.apps[index];
+    });
+  });
 }
 
 // ============================================
@@ -551,6 +819,7 @@ function initCatalogDownloader() {
 
 function initCatalogPdfLinks() {
   const links = document.querySelectorAll('.catalog-pdf-link');
+  updateCatalogPdfLinks();
   if (!links.length) return;
 
   links.forEach(link => {
