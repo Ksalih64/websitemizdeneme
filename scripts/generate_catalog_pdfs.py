@@ -200,7 +200,7 @@ TEXT = {
         "intro_minerals": "Die Mineralienübersicht zeigt die verfügbaren Rohstoffe, typische industrielle Anwendungen und den dokumentierten Einkaufsprozess. Sensible Analysewerte werden nicht vollständig im öffentlichen PDF veröffentlicht.",
         "intro_food": "Die Lebensmittelübersicht fasst die verfügbaren Produktgruppen zusammen. Spezifikation, Verpackung, Herkunftsunterlagen und Lieferdokumente werden je nach Käuferanforderung vorbereitet.",
         "note_title": "Analysebericht vorhanden",
-        "note": "Alle gelisteten Produkte verfügen über einen Analysebericht und ein relevantes Dokumentenpaket. Öffentliche PDFs zeigen bewusst nur eine sichere Übersicht; detaillierte Dateien werden direkt per WhatsApp oder E-Mail geteilt.",
+        "note": "Alle gelisteten Produkte verfügen über einen Analysebericht und ein relevantes Dokumentenpaket. Öffentliche PDFs zeigen bewusst nur eine sichere Übersicht; detaillierte Dateien werden direkt per E-Mail geteilt.",
         "section_products": "Produktübersicht",
         "labels": {
             "main": "Hauptbestandteil",
@@ -215,7 +215,7 @@ TEXT = {
         "docs_food": "Analysebericht, Spezifikation, Herkunft und Versandpapiere auf Anfrage verfügbar",
         "contact_title": "Dokumente oder Angebot anfordern",
         "contact_text": "Senden Sie Produkt, Menge, Zielhafen und gewünschte Dokumente. KMZ Trade teilt die passende Datei nach Käuferprüfung.",
-        "footer": "KMZ Trade | info@kmztrade.com | +49 178 4003264 | kmztrade.com",
+        "footer": "KMZ Trade | info@kmztrade.com | Im Krämer 12, 61169 Friedberg | kmztrade.com",
     },
     "en": {
         "language_name": "English",
@@ -232,7 +232,7 @@ TEXT = {
         "intro_minerals": "The minerals overview presents available commodities, typical industrial uses and the documented sourcing process. Sensitive assay details are intentionally not fully published in the public PDF.",
         "intro_food": "The food overview summarizes available product groups. Specification, packaging, origin records and shipment documentation are prepared according to buyer requirements.",
         "note_title": "Analysis report available",
-        "note": "Every listed product has an analysis report and a relevant document pack available. Public PDFs show a safe summary only; detailed files are shared directly by WhatsApp or email.",
+        "note": "Every listed product has an analysis report and a relevant document pack available. Public PDFs show a safe summary only; detailed files are shared directly by email.",
         "section_products": "Product overview",
         "labels": {
             "main": "Main component",
@@ -247,7 +247,7 @@ TEXT = {
         "docs_food": "Analysis report, specification, origin and shipment papers available on request",
         "contact_title": "Request documents or quotation",
         "contact_text": "Send product, quantity, destination port and required documents. KMZ Trade shares the relevant file after buyer review.",
-        "footer": "KMZ Trade | info@kmztrade.com | +49 178 4003264 | kmztrade.com",
+        "footer": "KMZ Trade | info@kmztrade.com | Im Krämer 12, 61169 Friedberg | kmztrade.com",
     },
     "tr": {
         "language_name": "Türkçe",
@@ -264,7 +264,7 @@ TEXT = {
         "intro_minerals": "Maden özeti mevcut ürünleri, tipik endüstriyel kullanım alanlarını ve belgeli tedarik sürecini gösterir. Hassas analiz detayları açık PDF içinde bilinçli olarak tam yayımlanmaz.",
         "intro_food": "Gıda özeti mevcut ürün gruplarını gösterir. Spesifikasyon, ambalaj, menşe kayıtları ve sevkiyat belgeleri alıcı ihtiyacına göre hazırlanır.",
         "note_title": "Analiz raporu mevcut",
-        "note": "Listelenen tüm ürünler için analiz raporu ve ilgili belge paketi mevcuttur. Açık PDF'ler yalnızca güvenli bir özet sunar; detaylı dosyalar WhatsApp veya e-posta ile doğrudan paylaşılır.",
+        "note": "Listelenen tüm ürünler için analiz raporu ve ilgili belge paketi mevcuttur. Açık PDF'ler yalnızca güvenli bir özet sunar; detaylı dosyalar e-posta ile doğrudan paylaşılır.",
         "section_products": "Ürün özeti",
         "labels": {
             "main": "Ana bileşen",
@@ -279,7 +279,7 @@ TEXT = {
         "docs_food": "Analiz raporu, spesifikasyon, menşe ve sevkiyat evrakları talep üzerine mevcut",
         "contact_title": "Belge veya teklif talep edin",
         "contact_text": "Ürün, miktar, varış limanı ve istenen belgeleri iletin. KMZ Trade ilgili dosyayı alıcı kontrolünden sonra paylaşır.",
-        "footer": "KMZ Trade | info@kmztrade.com | +49 178 4003264 | kmztrade.com",
+        "footer": "KMZ Trade | info@kmztrade.com | Im Krämer 12, 61169 Friedberg | kmztrade.com",
     },
 }
 
@@ -679,7 +679,7 @@ def contact_section(strings, styles):
         [
             [paragraph(strings["contact_title"], styles["h2"])],
             [paragraph(strings["contact_text"], styles["body_light"])],
-            [paragraph("WhatsApp: +49 178 4003264   |   Email: info@kmztrade.com", styles["contact"])],
+            [paragraph("Email: info@kmztrade.com   |   Address: Im Krämer 12, 61169 Friedberg", styles["contact"])],
         ],
         colWidths=[170 * mm],
     )

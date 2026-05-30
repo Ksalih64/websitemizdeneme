@@ -1035,50 +1035,6 @@ h4 {
   color: var(--accent-gold);
 }
 
-/* ---------- WhatsApp Float Button ---------- */
-.whatsapp-float {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 999;
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
-  transition: all var(--transition-normal);
-}
-
-.whatsapp-float::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, #25D366, transparent);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
-  z-index: -1;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1) translateY(-4px);
-  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
-}
-
-.whatsapp-float:hover::before {
-  opacity: 1;
-  animation: pulse-ring 1.5s infinite;
-}
-
-.whatsapp-float svg {
-  width: 32px;
-  height: 32px;
-  fill: white;
-}
-
 @keyframes pulse-ring {
   0% {
     transform: scale(1);
@@ -1933,17 +1889,6 @@ h4 {
     text-align: center;
   }
 
-  .whatsapp-float {
-    bottom: 24px;
-    right: 24px;
-    width: 56px;
-    height: 56px;
-  }
-
-  .whatsapp-float svg {
-    width: 28px;
-    height: 28px;
-  }
 }
 
 @media (max-width: 480px) {

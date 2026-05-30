@@ -326,7 +326,6 @@ function initFormEnhancements() {
         const body = [
           `Name: ${formData.get('name') || ''}`,
           `Email: ${formData.get('email') || ''}`,
-          `Phone: ${formData.get('phone') || ''}`,
           `Company: ${formData.get('company') || ''}`,
           `Product: ${productLabel || formData.get('product') || ''}`,
           `Inquiry Type: ${inquiryType || 'rfq'}`,
