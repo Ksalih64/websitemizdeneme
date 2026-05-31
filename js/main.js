@@ -486,8 +486,8 @@ function initLanguageSwitcher() {
   updateButton(currentLang);
   dropdown.querySelector(`[data-lang="${currentLang}"]`)?.classList.add('active');
 
-  // Apply translations if not default
-  if (currentLang !== 'de' && typeof translations !== 'undefined') {
+  // Keep fallback HTML and translation data in sync for every language, including German.
+  if (typeof translations !== 'undefined') {
     applyTranslations(currentLang);
   }
 
