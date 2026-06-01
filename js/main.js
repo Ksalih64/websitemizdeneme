@@ -569,6 +569,12 @@ const catalogSpecTranslations = {
         packaging: 'Bulk oder Big Bag',
         apps: ['Stahl', 'Legierungen', 'Batterie']
       },
+      lead: {
+        main: 'Bleierz',
+        form: 'Erz / Konzentrat',
+        packaging: 'Bulk oder Big Bag',
+        apps: ['Batterien', 'Metallurgie', 'Industrie']
+      },
       monazite: {
         main: 'Monazit',
         form: 'Mineralsand / Konzentrat',
@@ -606,6 +612,12 @@ const catalogSpecTranslations = {
         packaging: 'Bulk or Big Bag',
         apps: ['Steel', 'Alloys', 'Battery']
       },
+      lead: {
+        main: 'Lead ore',
+        form: 'Ore / concentrate',
+        packaging: 'Bulk or Big Bag',
+        apps: ['Batteries', 'Metallurgy', 'Industry']
+      },
       monazite: {
         main: 'Monazite',
         form: 'Mineral sand / concentrate',
@@ -642,6 +654,12 @@ const catalogSpecTranslations = {
         form: 'Cevher / konsantre',
         packaging: 'Bulk veya Big Bag',
         apps: ['Çelik', 'Alaşımlar', 'Batarya']
+      },
+      lead: {
+        main: 'Kurşun cevheri',
+        form: 'Cevher / konsantre',
+        packaging: 'Bulk veya Big Bag',
+        apps: ['Batarya', 'Metalurji', 'Sanayi']
       },
       monazite: {
         main: 'Monazite',
