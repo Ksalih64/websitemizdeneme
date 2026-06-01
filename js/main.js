@@ -563,35 +563,11 @@ const catalogSpecTranslations = {
     analysis: 'Analysebericht verfügbar',
     docs: 'Analysebericht, COA, Herkunft und Versandpapiere verfügbar',
     products: {
-      zircon: {
-        main: 'Zirkonsand',
-        form: 'Mineralsand',
-        packaging: 'Bulk oder Big Bag',
-        apps: ['Keramik', 'Gießerei', 'Refraktär']
-      },
-      ilmenite: {
-        main: 'Ilmenit',
-        form: 'Erz / Konzentrat',
-        packaging: 'Bulk oder Big Bag',
-        apps: ['Pigmente', 'TiO2', 'Schweißen']
-      },
       manganese: {
         main: 'Manganerz',
         form: 'Erz / Konzentrat',
         packaging: 'Bulk oder Big Bag',
         apps: ['Stahl', 'Legierungen', 'Batterie']
-      },
-      lead: {
-        main: 'Bleierz',
-        form: 'Erz / Konzentrat',
-        packaging: 'Bulk oder Big Bag',
-        apps: ['Batterien', 'Metallurgie', 'Industrie']
-      },
-      zinc: {
-        main: 'Zinkerz',
-        form: 'Erz / Konzentrat',
-        packaging: 'Bulk oder Big Bag',
-        apps: ['Galvanisierung', 'Legierungen', 'Metallhandel']
       },
       monazite: {
         main: 'Monazit',
@@ -606,7 +582,7 @@ const catalogSpecTranslations = {
         apps: ['Elektronik', 'Superlegierung', 'Niob']
       },
       zirconium: {
-        main: 'Zirconium-Sand',
+        main: 'Zirconium',
         form: 'Mineralsand',
         packaging: 'Bulk oder Big Bag',
         apps: ['Keramik', 'Gießerei', 'Refraktär']
@@ -624,35 +600,11 @@ const catalogSpecTranslations = {
     analysis: 'Analysis report available',
     docs: 'Analysis report, COA, origin and shipment papers available',
     products: {
-      zircon: {
-        main: 'Zircon sand',
-        form: 'Mineral sand',
-        packaging: 'Bulk or Big Bag',
-        apps: ['Ceramics', 'Foundry', 'Refractory']
-      },
-      ilmenite: {
-        main: 'Ilmenite',
-        form: 'Ore / concentrate',
-        packaging: 'Bulk or Big Bag',
-        apps: ['Pigments', 'TiO2', 'Welding']
-      },
       manganese: {
         main: 'Manganese ore',
         form: 'Ore / concentrate',
         packaging: 'Bulk or Big Bag',
         apps: ['Steel', 'Alloys', 'Battery']
-      },
-      lead: {
-        main: 'Lead ore',
-        form: 'Ore / concentrate',
-        packaging: 'Bulk or Big Bag',
-        apps: ['Batteries', 'Metallurgy', 'Industry']
-      },
-      zinc: {
-        main: 'Zinc ore',
-        form: 'Ore / concentrate',
-        packaging: 'Bulk or Big Bag',
-        apps: ['Galvanizing', 'Alloys', 'Metal trading']
       },
       monazite: {
         main: 'Monazite',
@@ -667,7 +619,7 @@ const catalogSpecTranslations = {
         apps: ['Electronics', 'Superalloys', 'Niobium']
       },
       zirconium: {
-        main: 'Zirconium sand',
+        main: 'Zirconium',
         form: 'Mineral sand',
         packaging: 'Bulk or Big Bag',
         apps: ['Ceramics', 'Foundry', 'Refractory']
@@ -685,35 +637,11 @@ const catalogSpecTranslations = {
     analysis: 'Analiz raporu mevcut',
     docs: 'Analiz raporu, COA, menşe ve sevkiyat evrakları mevcut',
     products: {
-      zircon: {
-        main: 'Zirkon kumu',
-        form: 'Mineral kumu',
-        packaging: 'Bulk veya Big Bag',
-        apps: ['Seramik', 'Döküm', 'Refrakter']
-      },
-      ilmenite: {
-        main: 'İlmenit',
-        form: 'Cevher / konsantre',
-        packaging: 'Bulk veya Big Bag',
-        apps: ['Pigment', 'TiO2', 'Kaynak']
-      },
       manganese: {
         main: 'Manganez cevheri',
         form: 'Cevher / konsantre',
         packaging: 'Bulk veya Big Bag',
         apps: ['Çelik', 'Alaşımlar', 'Batarya']
-      },
-      lead: {
-        main: 'Kurşun cevheri',
-        form: 'Cevher / konsantre',
-        packaging: 'Bulk veya Big Bag',
-        apps: ['Batarya', 'Metalurji', 'Sanayi']
-      },
-      zinc: {
-        main: 'Çinko cevheri',
-        form: 'Cevher / konsantre',
-        packaging: 'Bulk veya Big Bag',
-        apps: ['Galvaniz', 'Alaşımlar', 'Metal ticareti']
       },
       monazite: {
         main: 'Monazite',
@@ -728,7 +656,7 @@ const catalogSpecTranslations = {
         apps: ['Elektronik', 'Süper alaşım', 'Niyobyum']
       },
       zirconium: {
-        main: 'Zirconium sand',
+        main: 'Zirconium',
         form: 'Mineral kumu',
         packaging: 'Bulk veya Big Bag',
         apps: ['Seramik', 'Döküm', 'Refrakter']

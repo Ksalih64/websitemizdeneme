@@ -284,220 +284,51 @@ TEXT = {
 }
 
 
+def t(de, en, tr):
+    return {"de": de, "en": en, "tr": tr}
+
+
+def product(key, image, formula, main, form, packaging, apps, name, desc):
+    return {
+        "key": key,
+        "image": image,
+        "formula": formula,
+        "main": main,
+        "form": form,
+        "packaging": packaging,
+        "apps": apps,
+        "name": name,
+        "desc": desc,
+    }
+
+
 MINERALS = [
-    {
-        "key": "zircon",
-        "image": "zircon-sand.jpg",
-        "formula": "ZrSiO4",
-        "main": {"de": "Zirkonsand", "en": "Zircon sand", "tr": "Zirkon kumu"},
-        "form": {"de": "Mineralsand", "en": "Mineral sand", "tr": "Mineral kumu"},
-        "packaging": {"de": "Bulk oder Big Bag", "en": "Bulk or Big Bag", "tr": "Bulk veya Big Bag"},
-        "apps": {
-            "de": "Keramik, Gießerei, Refraktär",
-            "en": "Ceramics, foundry, refractory",
-            "tr": "Seramik, döküm, refrakter",
-        },
-        "name": {"de": "Zirkonsand", "en": "Zircon Sand", "tr": "Zirkon Kumu"},
-        "desc": {
-            "de": "Hochwertiger Zirkonsand für Keramik, Gießerei und Refraktäranwendungen mit dokumentierter Analyse und zuverlässiger Lieferabwicklung.",
-            "en": "High-quality zircon sand for ceramic, foundry and refractory applications with documented analysis and reliable shipment handling.",
-            "tr": "Seramik, döküm ve refrakter uygulamaları için yüksek kaliteli zirkon kumu; analiz belgesi ve düzenli sevkiyat desteğiyle sunulur.",
-        },
-    },
-    {
-        "key": "ilmenite",
-        "image": "ilmenite.jpg",
-        "formula": "FeTiO3",
-        "main": {"de": "Ilmenit", "en": "Ilmenite", "tr": "İlmenit"},
-        "form": {"de": "Erz / Konzentrat", "en": "Ore / concentrate", "tr": "Cevher / konsantre"},
-        "packaging": {"de": "Bulk oder Big Bag", "en": "Bulk or Big Bag", "tr": "Bulk veya Big Bag"},
-        "apps": {
-            "de": "Pigmente, TiO2, Schweißen",
-            "en": "Pigments, TiO2, welding",
-            "tr": "Pigment, TiO2, kaynak",
-        },
-        "name": {"de": "Ilmenit", "en": "Ilmenite", "tr": "İlmenit"},
-        "desc": {
-            "de": "Titan-Eisen-Mineral für industrielle Anwendungen wie Pigmente, Titandioxid-Vorstufen und Schweißelektroden.",
-            "en": "Titanium-iron mineral for industrial uses including pigments, titanium dioxide feedstock and welding electrode applications.",
-            "tr": "Pigment, titanyum dioksit hammaddesi ve kaynak elektrodu uygulamaları için kullanılan titanyum-demir minerali.",
-        },
-    },
-    {
-        "key": "manganese",
-        "image": "manganese-ore.jpg",
-        "formula": "Mn",
-        "main": {"de": "Manganerz", "en": "Manganese ore", "tr": "Manganez cevheri"},
-        "form": {"de": "Erz / Konzentrat", "en": "Ore / concentrate", "tr": "Cevher / konsantre"},
-        "packaging": {"de": "Bulk oder Big Bag", "en": "Bulk or Big Bag", "tr": "Bulk veya Big Bag"},
-        "apps": {
-            "de": "Stahl, Legierungen, Batterie-Vorprodukte",
-            "en": "Steel, alloys, battery precursors",
-            "tr": "Çelik, alaşımlar, batarya ön ürünleri",
-        },
-        "name": {"de": "Manganerz", "en": "Manganese Ore", "tr": "Manganez Cevheri"},
-        "desc": {
-            "de": "Manganerz für Stahl, Ferrolegierungen und Batterie-Vorprodukte; lieferbar nach Analysezertifikat, Herkunftsnachweis und vereinbarter Körnung.",
-            "en": "Manganese ore for steel, ferroalloys and battery precursor supply, available with analysis certificate, origin documents and agreed sizing.",
-            "tr": "Çelik, ferro alaşım ve batarya ön ürünleri için manganez cevheri; analiz sertifikası, menşe belgesi ve istenen tane boyutuyla tedarik edilir.",
-        },
-    },
-    {
-        "key": "lead",
-        "image": "lead-ore.jpg",
-        "formula": "Pb",
-        "main": {"de": "Bleierz", "en": "Lead ore", "tr": "Kurşun cevheri"},
-        "form": {"de": "Erz / Konzentrat", "en": "Ore / concentrate", "tr": "Cevher / konsantre"},
-        "packaging": {"de": "Bulk oder Big Bag", "en": "Bulk or Big Bag", "tr": "Bulk veya Big Bag"},
-        "apps": {
-            "de": "Batterien, Metallurgie, Industrie",
-            "en": "Batteries, metallurgy, industry",
-            "tr": "Batarya, metalurji, sanayi",
-        },
-        "name": {"de": "Bleierz", "en": "Lead Ore", "tr": "Kurşun Cevheri"},
-        "desc": {
-            "de": "Bleierz und Bleikonzentrat für Metallurgie, Batterieindustrie und Weiterverarbeitung mit klarer Dokumentation der Analysewerte.",
-            "en": "Lead ore and lead concentrate for metallurgy, battery production and downstream processing with clear analytical documentation.",
-            "tr": "Metalurji, batarya üretimi ve ileri işleme için kurşun cevheri ve kurşun konsantresi; analiz değerleri açık şekilde belgelenir.",
-        },
-    },
-    {
-        "key": "zinc",
-        "image": "zinc-ore.jpg",
-        "formula": "Zn",
-        "main": {"de": "Zinkerz", "en": "Zinc ore", "tr": "Çinko cevheri"},
-        "form": {"de": "Erz / Konzentrat", "en": "Ore / concentrate", "tr": "Cevher / konsantre"},
-        "packaging": {"de": "Bulk oder Big Bag", "en": "Bulk or Big Bag", "tr": "Bulk veya Big Bag"},
-        "apps": {
-            "de": "Galvanisierung, Legierungen, Metallhandel",
-            "en": "Galvanizing, alloys, metal trading",
-            "tr": "Galvaniz, alaşımlar, metal ticareti",
-        },
-        "name": {"de": "Zinkerz", "en": "Zinc Ore", "tr": "Çinko Cevheri"},
-        "desc": {
-            "de": "Zinkerz und Zinkkonzentrat für Verzinkung, Legierungen und Metallhandel; Spezifikation, Verpackung und Transport werden projektbezogen abgestimmt.",
-            "en": "Zinc ore and zinc concentrate for galvanizing, alloy production and metal trading; specification, packaging and transport are aligned per project.",
-            "tr": "Galvanizleme, alaşım üretimi ve metal ticareti için çinko cevheri/konsantresi; spesifikasyon, ambalaj ve taşıma proje bazında netleştirilir.",
-        },
-    },
-    {
-        "key": "monazite",
-        "image": "monazite-ore.jpg",
-        "formula": "(Ce,La,Nd,Th)PO4",
-        "main": {"de": "Monazit", "en": "Monazite", "tr": "Monazite"},
-        "form": {"de": "Mineralsand / Konzentrat", "en": "Mineral sand / concentrate", "tr": "Mineral kumu / konsantre"},
-        "packaging": {"de": "Bulk oder Big Bag", "en": "Bulk or Big Bag", "tr": "Bulk veya Big Bag"},
-        "apps": {
-            "de": "Seltene Erden, Technologie, Industrie",
-            "en": "Rare earths, technology, industry",
-            "tr": "Nadir topraklar, teknoloji, sanayi",
-        },
-        "name": {"de": "Monazit Erz", "en": "Monazite Ore", "tr": "Monazite Cevheri"},
-        "desc": {
-            "de": "Monazit-Konzentrat mit seltenen Erden für spezialisierte industrielle Abnehmer; Lieferung mit geprüfter Dokumentation.",
-            "en": "Monazite concentrate containing rare earth elements for specialized industrial buyers, supplied with verified documentation.",
-            "tr": "Nadir toprak elementleri içeren monazite konsantresi; uzman endüstriyel alıcılar için doğrulanmış belgelerle tedarik edilir.",
-        },
-    },
-    {
-        "key": "columbite",
-        "image": "columbite.jpg",
-        "formula": "(Fe,Mn)Nb2O6",
-        "main": {"de": "Columbit", "en": "Columbite", "tr": "Columbite"},
-        "form": {"de": "Erz / Konzentrat", "en": "Ore / concentrate", "tr": "Cevher / konsantre"},
-        "packaging": {"de": "Bulk oder Big Bag", "en": "Bulk or Big Bag", "tr": "Bulk veya Big Bag"},
-        "apps": {
-            "de": "Elektronik, Superlegierung, Niob",
-            "en": "Electronics, superalloys, niobium",
-            "tr": "Elektronik, süper alaşım, niyobyum",
-        },
-        "name": {"de": "Columbit", "en": "Columbite", "tr": "Columbite"},
-        "desc": {
-            "de": "Niob-Tantal-haltiges Erz für Spezialmetalle, Elektronikkomponenten und hochfeste Legierungsanwendungen.",
-            "en": "Niobium-tantalum bearing ore for specialty metals, electronic components and high-strength alloy applications.",
-            "tr": "Özel metaller, elektronik bileşenler ve yüksek dayanımlı alaşımlar için niyobyum-tantal içeren cevher.",
-        },
-    },
-    {
-        "key": "zirconium",
-        "image": "zirconium-sand.jpg",
-        "formula": "ZrSiO4",
-        "main": {"de": "Zirconium-Sand", "en": "Zirconium sand", "tr": "Zirconium sand"},
-        "form": {"de": "Mineralsand", "en": "Mineral sand", "tr": "Mineral kumu"},
-        "packaging": {"de": "Bulk oder Big Bag", "en": "Bulk or Big Bag", "tr": "Bulk veya Big Bag"},
-        "apps": {
-            "de": "Keramik, Gießerei, Refraktär",
-            "en": "Ceramics, foundry, refractory",
-            "tr": "Seramik, döküm, refrakter",
-        },
-        "name": {"de": "Zirconium-Sand", "en": "Zirconium Sand", "tr": "Zirconium Sand"},
-        "desc": {
-            "de": "Feiner Zirconium-Mineralsand für Keramik, Gießerei und Refraktärproduktion; geeignet für klar definierte Qualitätsparameter.",
-            "en": "Fine zirconium mineral sand for ceramic, foundry and refractory production, suited to buyers with defined quality parameters.",
-            "tr": "Seramik, döküm ve refrakter üretimi için ince zirconium mineral kumu; kalite parametreleri net olan alıcılar için uygundur.",
-        },
-    },
+    product("manganese", "manganese-ore.jpg", "Mn", t("Manganerz", "Manganese ore", "Manganez cevheri"), t("Erz / Konzentrat", "Ore / concentrate", "Cevher / konsantre"), t("Bulk oder Big Bag", "Bulk or Big Bag", "Bulk veya Big Bag"), t("Stahl, Legierungen, Batterie-Vorprodukte", "Steel, alloys, battery precursors", "Çelik, alaşımlar, batarya ön ürünleri"), t("Manganerz", "Manganese Ore", "Manganez Cevheri"), t("Manganerz für Stahl, Ferrolegierungen und Batterie-Vorprodukte; lieferbar nach Analysezertifikat, Herkunftsnachweis und vereinbarter Körnung.", "Manganese ore for steel, ferroalloys and battery precursor supply, available with analysis certificate, origin documents and agreed sizing.", "Çelik, ferro alaşım ve batarya ön ürünleri için manganez cevheri; analiz sertifikası, menşe belgesi ve istenen tane boyutuyla tedarik edilir.")),
+    product("zirconium", "zirconium-sand.jpg", "ZrSiO4", t("Zirconium", "Zirconium", "Zirconium"), t("Mineralischer Rohstoff", "Mineral raw material", "Mineral hammadde"), t("Bulk oder Big Bag", "Bulk or Big Bag", "Bulk veya Big Bag"), t("Keramik, Gießerei, Refraktär", "Ceramics, foundry, refractory", "Seramik, döküm, refrakter"), t("Zirconium", "Zirconium", "Zirconium"), t("Zirconiumhaltiger Rohstoff für Keramik, Gießerei, Refraktärproduktion und technische Anwendungen mit dokumentierter Analyse.", "Zirconium-bearing raw material for ceramics, foundry, refractory production and technical applications with documented analysis.", "Seramik, döküm, refrakter üretimi ve teknik uygulamalar için belgeli analizle sunulan zirconium içerikli hammadde.")),
+    product("silicate", "zirconium-sand.jpg", "ZrHfO2", t("Zirconium Silicate", "Zirconium Silicate", "Zirconium Silicate"), t("Konzentrat / Mineralsand", "Concentrate / mineral sand", "Konsantre / mineral kumu"), t("Bulk oder Big Bag", "Bulk or Big Bag", "Bulk veya Big Bag"), t("Keramik, Glasuren, Hochtemperatur", "Ceramics, glazes, high temperature", "Seramik, sır, yüksek sıcaklık"), t("Zirconium Silicate", "Zirconium Silicate", "Zirconium Silicate"), t("Zirkonium-Silikat-Konzentrat für Keramik, Glasuren, Gießerei und Hochtemperaturanwendungen mit dokumentierter Qualität.", "Zirconium silicate concentrate for ceramics, glazes, foundry and high-temperature applications with documented quality.", "Seramik, sır, döküm ve yüksek sıcaklık uygulamaları için belgeli kaliteyle sunulan zirkonyum silikat konsantresi.")),
+    product("titanium", "titanium-tio2.jpg", "TiO2", t("Titanium TiO2", "Titanium TiO2", "Titanium TiO2"), t("Rohstoff / Konzentrat", "Raw material / concentrate", "Hammadde / konsantre"), t("Projektbezogene Mengen", "Project-based volumes", "Proje bazlı miktarlar"), t("Pigmente, Beschichtungen, Kunststoffe", "Pigments, coatings, plastics", "Pigment, kaplama, plastik"), t("Titanium TiO2", "Titanium TiO2", "Titanium TiO2"), t("Titandioxid-Rohstoff für Pigmente, Beschichtungen, Kunststoffe und industrielle Weiterverarbeitung nach Käuferanforderung.", "Titanium dioxide feedstock for pigments, coatings, plastics and downstream industrial processing according to buyer requirements.", "Pigment, kaplama, plastik ve ileri endüstriyel işleme için alıcı talebine göre sunulan titanyum dioksit hammaddesi.")),
+    product("columbite", "columbite.jpg", "NbTa2O5", t("Columbit", "Columbite", "Columbite"), t("Erz / Konzentrat", "Ore / concentrate", "Cevher / konsantre"), t("Bulk oder Big Bag", "Bulk or Big Bag", "Bulk veya Big Bag"), t("Elektronik, Superlegierung, Niob", "Electronics, superalloys, niobium", "Elektronik, süper alaşım, niyobyum"), t("Columbit", "Columbite", "Columbite"), t("Niob-Tantal-haltiges Erz für Spezialmetalle, Elektronikkomponenten und hochfeste Legierungsanwendungen.", "Niobium-tantalum bearing ore for specialty metals, electronic components and high-strength alloy applications.", "Özel metaller, elektronik bileşenler ve yüksek dayanımlı alaşımlar için niyobyum-tantal içeren cevher.")),
+    product("tin", "tin-ore.jpg", "Sn", t("Zinnerz", "Tin ore", "Kalay cevheri"), t("Erz / Kassiterit-Konzentrat", "Ore / cassiterite concentrate", "Cevher / kasiterit konsantresi"), t("Bulk oder Big Bag", "Bulk or Big Bag", "Bulk veya Big Bag"), t("Metallurgie, Lötmittel, Legierungen", "Metallurgy, solder, alloys", "Metalurji, lehim, alaşımlar"), t("Zinnerz", "Tin Ore", "Kalay Cevheri"), t("Zinnerz und Kassiterit-Konzentrat für Metallurgie, Lötmittel, Legierungen und industrielle Rohstoffbeschaffung.", "Tin ore and cassiterite concentrate for metallurgy, solder, alloys and industrial raw material sourcing.", "Metalurji, lehim, alaşım ve endüstriyel hammadde tedariki için kalay cevheri ve kasiterit konsantresi.")),
+    product("monazite", "monazite-ore.jpg", "(Ce,La,Nd,Th)PO4", t("Monazit", "Monazite", "Monazite"), t("Mineralsand / Konzentrat", "Mineral sand / concentrate", "Mineral kumu / konsantre"), t("Bulk oder Big Bag", "Bulk or Big Bag", "Bulk veya Big Bag"), t("Seltene Erden, Technologie, Industrie", "Rare earths, technology, industry", "Nadir topraklar, teknoloji, sanayi"), t("Monazit Erz", "Monazite Ore", "Monazite Cevheri"), t("Monazit-Konzentrat mit seltenen Erden für spezialisierte industrielle Abnehmer; Lieferung mit geprüfter Dokumentation.", "Monazite concentrate containing rare earth elements for specialized industrial buyers, supplied with verified documentation.", "Nadir toprak elementleri içeren monazite konsantresi; uzman endüstriyel alıcılar için doğrulanmış belgelerle tedarik edilir.")),
+    product("lanthanum", "rare-earth-elements.jpg", "La", t("Lanthan", "Lanthanum", "Lantanyum"), t("Seltene-Erden-Rohstoff", "Rare earth raw material", "Nadir toprak hammaddesi"), t("Auf Anfrage", "On request", "Talep üzerine"), t("Katalysatoren, Spezialglas, Metallurgie", "Catalysts, specialty glass, metallurgy", "Katalizör, özel cam, metalurji"), t("Lanthan", "Lanthanum", "Lantanyum"), t("Lanthan-haltige Seltene-Erden-Rohstoffe für Katalysatoren, Spezialglas, Metallurgie und technische Anwendungen.", "Lanthanum-bearing rare earth raw materials for catalysts, specialty glass, metallurgy and technical applications.", "Katalizör, özel cam, metalurji ve teknik uygulamalar için lantanyum içeren nadir toprak hammaddeleri.")),
+    product("cerium", "rare-earth-elements.jpg", "Ce", t("Cer", "Cerium", "Seryum"), t("Seltene-Erden-Rohstoff", "Rare earth raw material", "Nadir toprak hammaddesi"), t("Auf Anfrage", "On request", "Talep üzerine"), t("Poliermittel, Katalysatoren, Glas", "Polishing, catalysts, glass", "Parlatma, katalizör, cam"), t("Cer", "Cerium", "Seryum"), t("Cer-haltige Seltene-Erden-Rohstoffe für Poliermittel, Katalysatoren, Glasindustrie und Spezialchemie.", "Cerium-bearing rare earth raw materials for polishing compounds, catalysts, glass production and specialty chemistry.", "Parlatma bileşikleri, katalizörler, cam üretimi ve özel kimya için seryum içeren nadir toprak hammaddeleri.")),
+    product("praseodymium", "rare-earth-elements.jpg", "Pr", t("Praseodym", "Praseodymium", "Praseodymium"), t("Seltene-Erden-Rohstoff", "Rare earth raw material", "Nadir toprak hammaddesi"), t("Auf Anfrage", "On request", "Talep üzerine"), t("Magnete, Legierungen, Pigmente", "Magnets, alloys, pigments", "Mıknatıs, alaşım, pigment"), t("Praseodym", "Praseodymium", "Praseodymium"), t("Praseodym-haltige Seltene-Erden-Rohstoffe für Magnete, Legierungen, Pigmente und technische Komponenten.", "Praseodymium-bearing rare earth raw materials for magnets, alloys, pigments and technical components.", "Mıknatıs, alaşım, pigment ve teknik komponentler için praseodymium içeren nadir toprak hammaddeleri.")),
+    product("gadolinium", "rare-earth-elements.jpg", "Gd", t("Gadolinium", "Gadolinium", "Gadolinyum"), t("Seltene-Erden-Rohstoff", "Rare earth raw material", "Nadir toprak hammaddesi"), t("Auf Anfrage", "On request", "Talep üzerine"), t("Speziallegierungen, Magnetmaterialien", "Special alloys, magnetic materials", "Özel alaşım, manyetik malzeme"), t("Gadolinium", "Gadolinium", "Gadolinyum"), t("Gadolinium-haltige Seltene-Erden-Rohstoffe für Speziallegierungen, Magnetmaterialien und technische Anwendungen.", "Gadolinium-bearing rare earth raw materials for specialty alloys, magnetic materials and technical applications.", "Özel alaşımlar, manyetik malzemeler ve teknik uygulamalar için gadolinyum içeren nadir toprak hammaddeleri.")),
+    product("lithium", "lithium-ore.jpg", "Li", t("Lithium", "Lithium", "Lityum"), t("Erz / Spodumen-Konzentrat", "Ore / spodumene concentrate", "Cevher / spodümen konsantresi"), t("Projektbezogene Mengen", "Project-based volumes", "Proje bazlı miktarlar"), t("Batterie-Vorprodukte, Keramik", "Battery precursors, ceramics", "Batarya ön ürünleri, seramik"), t("Lithium", "Lithium", "Lityum"), t("Lithiumhaltiges Erz und Spodumen-Konzentrat für Batterie-Vorprodukte, Keramik und technische Lieferketten.", "Lithium-bearing ore and spodumene concentrate for battery precursors, ceramics and technical supply chains.", "Batarya ön ürünleri, seramik ve teknik tedarik zincirleri için lityum içeren cevher ve spodümen konsantresi.")),
+    product("barite", "barite.jpg", "BaSO4", t("Baryt", "Barite", "Barit"), t("Mineral / Pulver oder Stückgut", "Mineral / powder or lump", "Mineral / toz veya parça"), t("Bulk oder Big Bag", "Bulk or Big Bag", "Bulk veya Big Bag"), t("Bohrflüssigkeiten, Füllstoffe, Beschichtungen", "Drilling fluids, fillers, coatings", "Sondaj çamuru, dolgu, kaplama"), t("Baryt", "Barite", "Barit"), t("Baryt für Bohrflüssigkeiten, Füllstoffe, Beschichtungen und industrielle Anwendungen mit prüfbarer Spezifikation.", "Barite for drilling fluids, fillers, coatings and industrial applications with verifiable specification.", "Sondaj çamuru, dolgu, kaplama ve endüstriyel uygulamalar için doğrulanabilir spesifikasyonla sunulan barit.")),
+    product("copper", "copper-ore.jpg", "Cu", t("Kupfererz", "Copper ore", "Bakır cevheri"), t("Erz / Konzentrat", "Ore / concentrate", "Cevher / konsantre"), t("Bulk oder Big Bag", "Bulk or Big Bag", "Bulk veya Big Bag"), t("Metallurgie, Kabel, Legierungen", "Metallurgy, cable, alloys", "Metalurji, kablo, alaşım"), t("Kupfererz", "Copper Ore", "Bakır Cevheri"), t("Kupfererz und Kupferkonzentrat für Metallurgie, Kabelindustrie, Legierungen und industrielle Weiterverarbeitung.", "Copper ore and copper concentrate for metallurgy, cable industry, alloys and downstream industrial processing.", "Metalurji, kablo sanayi, alaşımlar ve ileri endüstriyel işleme için bakır cevheri ve bakır konsantresi.")),
+    product("fluorite", "fluorite.jpg", "CaF2", t("Fluorit", "Fluorite", "Fluorit"), t("Mineral / Konzentrat", "Mineral / concentrate", "Mineral / konsantre"), t("Bulk oder Big Bag", "Bulk or Big Bag", "Bulk veya Big Bag"), t("Stahl, Chemie, Glas, Keramik", "Steel, chemicals, glass, ceramics", "Çelik, kimya, cam, seramik"), t("Fluorit", "Fluorite", "Fluorit"), t("Fluorit für Stahl, Chemie, Glas, Keramik und Flusssäure-nahe industrielle Anwendungen mit Analyseunterlagen.", "Fluorite for steel, chemicals, glass, ceramics and hydrofluoric-acid-adjacent industrial applications with assay documents.", "Çelik, kimya, cam, seramik ve hidroflorik asit bağlantılı endüstriyel uygulamalar için analiz belgeli fluorit.")),
+    product("feldspar", "feldspar.jpg", "K/Na", t("Feldspat", "Feldspar", "Feldspat"), t("Mineral / Körnung nach Anfrage", "Mineral / sizing by request", "Mineral / talebe göre tane boyutu"), t("Bulk oder Big Bag", "Bulk or Big Bag", "Bulk veya Big Bag"), t("Keramik, Glas, Füllstoffe", "Ceramics, glass, fillers", "Seramik, cam, dolgu"), t("Feldspat", "Feldspar", "Feldspat"), t("Feldspat für Keramik, Glas, Füllstoffe und Baustoffe mit abgestimmter Körnung und Lieferform.", "Feldspar for ceramics, glass, fillers and construction materials with agreed sizing and delivery form.", "Seramik, cam, dolgu ve yapı malzemeleri için tane boyutu ve teslim formu netleştirilmiş feldspat.")),
+    product("coal", "coal.jpg", "Coal", t("Kohle", "Coal", "Kömür"), t("Industriekohle", "Industrial coal", "Endüstriyel kömür"), t("Projektbezogene Mengen", "Project-based volumes", "Proje bazlı miktarlar"), t("Energie, Prozesswärme, Rohstoffbedarf", "Energy, process heat, raw material demand", "Enerji, proses ısısı, hammadde ihtiyacı"), t("Kohle", "Coal", "Kömür"), t("Kohle für industrielle Energie, Prozesswärme und Rohstoffbedarf; Qualität und Logistik werden projektbezogen abgestimmt.", "Coal for industrial energy, process heat and raw material demand; quality and logistics are aligned per project.", "Endüstriyel enerji, proses ısısı ve hammadde ihtiyacı için kömür; kalite ve lojistik proje bazında netleştirilir.")),
 ]
 
 
 FOOD = [
-    {
-        "key": "sunflower",
-        "image": "sunflower-oil.jpg",
-        "formula": "Food grade",
-        "main": {"de": "Raffiniertes Sonnenblumenöl", "en": "Refined sunflower oil", "tr": "Rafine ayçiçek yağı"},
-        "form": {"de": "Flexibel nach Käuferbedarf", "en": "Flexible by buyer request", "tr": "Alıcı talebine göre esnek"},
-        "packaging": {"de": "Flexitank, IBC, Kanister oder Flasche", "en": "Flexitank, IBC, jerrycan or bottle", "tr": "Flexitank, IBC, bidon veya şişe"},
-        "apps": {
-            "de": "Lebensmittelindustrie, Großhandel, Gastronomie",
-            "en": "Food industry, wholesale, gastronomy",
-            "tr": "Gıda sanayi, toptan satış, gastronomi",
-        },
-        "name": {"de": "Sonnenblumenöl", "en": "Sunflower Oil", "tr": "Ayçiçek Yağı"},
-        "desc": {
-            "de": "Raffiniertes Sonnenblumenöl für Lebensmittelindustrie, Großhandel und Gastronomie mit flexiblen Verpackungs- und Lieferoptionen.",
-            "en": "Refined sunflower oil for the food industry, wholesale and gastronomy with flexible packaging and delivery options.",
-            "tr": "Gıda sanayi, toptan ticaret ve gastronomi için rafine ayçiçek yağı; esnek ambalaj ve teslimat seçenekleriyle sunulur.",
-        },
-    },
-    {
-        "key": "palm",
-        "image": "palm-oil.jpg",
-        "formula": "Food / industrial grade",
-        "main": {"de": "Palmöl", "en": "Palm oil", "tr": "Palm yağı"},
-        "form": {"de": "Nach Käuferanforderung", "en": "By buyer requirement", "tr": "Alıcı ihtiyacına göre"},
-        "packaging": {"de": "Flexitank, IBC oder Bulk", "en": "Flexitank, IBC or bulk", "tr": "Flexitank, IBC veya bulk"},
-        "apps": {
-            "de": "Lebensmittel, Kosmetik, Weiterverarbeitung",
-            "en": "Food, cosmetics, further processing",
-            "tr": "Gıda, kozmetik, ileri işleme",
-        },
-        "name": {"de": "Palmöl", "en": "Palm Oil", "tr": "Palm Yağı"},
-        "desc": {
-            "de": "Palmöl für industrielle Lebensmittelproduktion, Kosmetik und Weiterverarbeitung; Beschaffung und Dokumentation nach Kundenvorgabe.",
-            "en": "Palm oil for industrial food production, cosmetics and further processing, with sourcing and documentation aligned to customer requirements.",
-            "tr": "Endüstriyel gıda üretimi, kozmetik ve ileri işleme için palm yağı; kaynak ve belge süreçleri müşteri ihtiyacına göre düzenlenir.",
-        },
-    },
-    {
-        "key": "sugar",
-        "image": "sugar.jpg",
-        "formula": "ICUMSA options",
-        "main": {"de": "Weißer Zucker", "en": "White sugar", "tr": "Beyaz şeker"},
-        "form": {"de": "ICUMSA nach Anfrage", "en": "ICUMSA by request", "tr": "Talebe göre ICUMSA"},
-        "packaging": {"de": "Säcke, Big Bag oder Containerladung", "en": "Bags, Big Bag or container load", "tr": "Çuval, Big Bag veya konteyner yükleme"},
-        "apps": {
-            "de": "Lebensmittelindustrie, Großhandel, Export",
-            "en": "Food industry, wholesale, export",
-            "tr": "Gıda sanayi, toptan satış, ihracat",
-        },
-        "name": {"de": "Zucker", "en": "Sugar", "tr": "Şeker"},
-        "desc": {
-            "de": "Weißer Zucker für Lebensmittelindustrie, Großhandel und Export; ICUMSA-Qualitäten und Verpackung werden nach Bedarf abgestimmt.",
-            "en": "White sugar for the food industry, wholesale and export; ICUMSA grades and packaging can be matched to demand.",
-            "tr": "Gıda sanayi, toptan satış ve ihracat için beyaz şeker; ICUMSA kalitesi ve ambalaj talebe göre eşleştirilir.",
-        },
-    },
+    product("sunflower", "sunflower-oil.jpg", "Food grade", t("Raffiniertes Sonnenblumenöl", "Refined sunflower oil", "Rafine ayçiçek yağı"), t("0.5 lt, 1 lt, 2 lt, 3 lt, 5 lt, 20 lt", "0.5 lt, 1 lt, 2 lt, 3 lt, 5 lt, 20 lt", "0.5 lt, 1 lt, 2 lt, 3 lt, 5 lt, 20 lt"), t("Flasche, Kanister, IBC, Flexitank", "Bottle, jerrycan, IBC, flexitank", "Şişe, bidon, IBC, flexitank"), t("Lebensmittelindustrie, Großhandel, Gastronomie", "Food industry, wholesale, gastronomy", "Gıda sanayi, toptan satış, gastronomi"), t("Sonnenblumenöl", "Sunflower Oil", "Ayçiçek Yağı"), t("Raffiniertes Sonnenblumenöl für Lebensmittelindustrie, Großhandel und Gastronomie; verfügbar in 0.5 lt, 1 lt, 2 lt, 3 lt, 5 lt und 20 lt.", "Refined sunflower oil for food industry, wholesale and gastronomy; available in 0.5 lt, 1 lt, 2 lt, 3 lt, 5 lt and 20 lt.", "Gıda sanayi, toptan ticaret ve gastronomi için rafine ayçiçek yağı; 0.5 lt, 1 lt, 2 lt, 3 lt, 5 lt ve 20 lt ambalaj seçenekleriyle sunulur.")),
+    product("palm", "palm-oil.jpg", "Food / industrial grade", t("Palmöl", "Palm oil", "Palm yağı"), t("Nach Käuferanforderung", "By buyer requirement", "Alıcı ihtiyacına göre"), t("Flexitank, IBC oder Bulk", "Flexitank, IBC or bulk", "Flexitank, IBC veya bulk"), t("Lebensmittel, Kosmetik, Weiterverarbeitung", "Food, cosmetics, further processing", "Gıda, kozmetik, ileri işleme"), t("Palmöl", "Palm Oil", "Palm Yağı"), t("Palmöl für industrielle Lebensmittelproduktion, Kosmetik und Weiterverarbeitung; Beschaffung und Dokumentation nach Kundenvorgabe.", "Palm oil for industrial food production, cosmetics and further processing, with sourcing and documentation aligned to customer requirements.", "Endüstriyel gıda üretimi, kozmetik ve ileri işleme için palm yağı; kaynak ve belge süreçleri müşteri ihtiyacına göre düzenlenir.")),
+    product("olive", "olive-oil.jpg", "Food grade", t("Olivenöl", "Olive oil", "Zeytinyağı"), t("Nach Käuferanforderung", "By buyer requirement", "Alıcı ihtiyacına göre"), t("Flasche, Kanister, IBC oder Bulk", "Bottle, jerrycan, IBC or bulk", "Şişe, bidon, IBC veya bulk"), t("Lebensmittelhandel, Gastronomie, Abfüllung", "Food trade, gastronomy, bottling", "Gıda ticareti, gastronomi, dolum"), t("Olivenöl", "Olive Oil", "Zeytinyağı"), t("Olivenöl für Lebensmittelhandel, Gastronomie und Abfüllprojekte; Spezifikation, Verpackung und Herkunft werden nach Käuferbedarf abgestimmt.", "Olive oil for food trade, gastronomy and bottling projects; specification, packaging and origin are aligned to buyer requirements.", "Gıda ticareti, gastronomi ve dolum projeleri için zeytinyağı; spesifikasyon, ambalaj ve menşe alıcı talebine göre netleştirilir.")),
+    product("rapeseed", "rapeseed-oil.jpg", "Food grade", t("Rapsöl", "Rapeseed oil", "Kanola yağı"), t("Nach Käuferanforderung", "By buyer requirement", "Alıcı ihtiyacına göre"), t("Flasche, Kanister, IBC oder Flexitank", "Bottle, jerrycan, IBC or flexitank", "Şişe, bidon, IBC veya flexitank"), t("Lebensmittelindustrie, Großhandel, technische Anwendungen", "Food industry, wholesale, technical applications", "Gıda sanayi, toptan satış, teknik uygulamalar"), t("Rapsöl", "Rapeseed Oil", "Kanola Yağı"), t("Raps- bzw. Kanolaöl für Lebensmittelindustrie, Großhandel und technische Anwendungen mit flexiblem Verpackungskonzept.", "Rapeseed / canola oil for the food industry, wholesale and technical applications with flexible packaging concepts.", "Gıda sanayi, toptan satış ve teknik uygulamalar için esnek ambalaj seçenekleriyle kanola/raps yağı.")),
+    product("sugar", "sugar.jpg", "ICUMSA 45", t("ICUMSA 45 Zucker", "ICUMSA 45 sugar", "ICUMSA 45 şeker"), t("Ursprung Brasilien", "Origin Brazil", "Menşe Brezilya"), t("Säcke, Big Bag oder Containerladung", "Bags, Big Bag or container load", "Çuval, Big Bag veya konteyner yükleme"), t("Lebensmittelindustrie, Großhandel, Export", "Food industry, wholesale, export", "Gıda sanayi, toptan satış, ihracat"), t("ICUMSA 45 Zucker", "ICUMSA 45 Sugar", "ICUMSA 45 Şeker"), t("Weißer ICUMSA 45 Zucker mit Ursprung Brasilien für Lebensmittelindustrie, Großhandel und Export; Verpackung und Dokumente nach Käuferanforderung.", "White ICUMSA 45 sugar of Brazil origin for the food industry, wholesale and export; packaging and documents follow buyer requirements.", "Brezilya menşeli beyaz ICUMSA 45 şeker; gıda sanayi, toptan satış ve ihracat için ambalaj ve belgeler alıcı talebine göre hazırlanır.")),
 ]
 
 
