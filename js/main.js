@@ -392,25 +392,50 @@ function initBackToTop() {
 // COOKIE BANNER
 // ============================================
 function initCookieBanner() {
-  const banner = document.getElementById('cookieBanner');
+  let banner = document.getElementById('cookieBanner');
+
+  if (!banner) {
+    document.body.insertAdjacentHTML('beforeend', `
+      <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+          <div class="cookie-text">
+            <h4 data-i18n="cookie.title">Cookie-Hinweis</h4>
+            <p><span data-i18n="cookie.text">Wir verwenden Cookies, um Ihre Erfahrung zu verbessern.</span> <a href="impressum.html#cookies" data-i18n="cookie.more">Mehr erfahren</a></p>
+          </div>
+          <div class="cookie-buttons">
+            <button class="cookie-btn cookie-btn-decline" id="cookieDecline" data-i18n="cookie.decline">Ablehnen</button>
+            <button class="cookie-btn cookie-btn-accept" id="cookieAccept" data-i18n="cookie.accept">Akzeptieren</button>
+          </div>
+        </div>
+      </div>
+    `);
+    banner = document.getElementById('cookieBanner');
+
+    const currentLang = localStorage.getItem('kmzLang') || 'de';
+    applyTranslations(currentLang);
+  }
+
   const acceptBtn = document.getElementById('cookieAccept');
   const declineBtn = document.getElementById('cookieDecline');
 
   if (!banner) return;
 
   // Check if already accepted/declined
-  if (localStorage.getItem('cookieConsent')) return;
+  const savedConsent = localStorage.getItem('cookieConsent');
+  if (savedConsent) return;
 
   // Show banner after delay
   setTimeout(() => banner.classList.add('visible'), 2000);
 
   acceptBtn?.addEventListener('click', () => {
     localStorage.setItem('cookieConsent', 'accepted');
+    window.kmzUpdateAnalyticsConsent?.(true);
     banner.classList.remove('visible');
   });
 
   declineBtn?.addEventListener('click', () => {
     localStorage.setItem('cookieConsent', 'declined');
+    window.kmzUpdateAnalyticsConsent?.(false);
     banner.classList.remove('visible');
   });
 }
