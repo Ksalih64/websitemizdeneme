@@ -5,6 +5,12 @@
 (function () {
   const measurementId = 'G-0T769P742C';
   const consentKey = 'cookieConsent';
+  const consentRequiredRegions = [
+    'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR',
+    'HU', 'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL',
+    'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB', 'CH'
+  ];
+  let runtimeConsentChoice = null;
 
   window.dataLayer = window.dataLayer || [];
 
@@ -14,26 +20,47 @@
 
   window.gtag = window.gtag || gtag;
 
-  function hasAnalyticsConsent() {
+  function getStoredConsent() {
+    if (runtimeConsentChoice) return runtimeConsentChoice;
+
     try {
-      return localStorage.getItem(consentKey) === 'accepted';
+      return localStorage.getItem(consentKey);
     } catch (_) {
-      return false;
+      return null;
     }
   }
 
-  function getConsentState() {
-    return hasAnalyticsConsent() ? 'granted' : 'denied';
+  function consentStateForOtherRegions() {
+    return getStoredConsent() === 'declined' ? 'denied' : 'granted';
+  }
+
+  function consentStateForConsentRegions() {
+    return getStoredConsent() === 'accepted' ? 'granted' : 'denied';
+  }
+
+  function shouldSendMeasurementEvents() {
+    return getStoredConsent() !== 'declined';
   }
 
   window.gtag('consent', 'default', {
-    analytics_storage: getConsentState(),
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
+    analytics_storage: consentStateForOtherRegions(),
+    ad_storage: consentStateForOtherRegions(),
+    ad_user_data: consentStateForOtherRegions(),
+    ad_personalization: consentStateForOtherRegions(),
     functionality_storage: 'granted',
     security_storage: 'granted',
     wait_for_update: 500
+  });
+
+  window.gtag('consent', 'default', {
+    analytics_storage: consentStateForConsentRegions(),
+    ad_storage: consentStateForConsentRegions(),
+    ad_user_data: consentStateForConsentRegions(),
+    ad_personalization: consentStateForConsentRegions(),
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500,
+    region: consentRequiredRegions
   });
 
   const googleTag = document.createElement('script');
@@ -43,15 +70,17 @@
 
   window.gtag('js', new Date());
   window.gtag('config', measurementId, {
-    send_page_view: hasAnalyticsConsent()
+    send_page_view: shouldSendMeasurementEvents()
   });
 
   window.kmzUpdateAnalyticsConsent = function (accepted) {
+    runtimeConsentChoice = accepted ? 'accepted' : 'declined';
+
     window.gtag('consent', 'update', {
       analytics_storage: accepted ? 'granted' : 'denied',
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied'
+      ad_storage: accepted ? 'granted' : 'denied',
+      ad_user_data: accepted ? 'granted' : 'denied',
+      ad_personalization: accepted ? 'granted' : 'denied'
     });
 
     if (accepted) {
@@ -64,7 +93,7 @@
   };
 
   window.kmzTrackEvent = function (eventName, params = {}) {
-    if (!hasAnalyticsConsent()) return;
+    if (!shouldSendMeasurementEvents()) return;
 
     window.gtag('event', eventName, {
       page_title: document.title,
